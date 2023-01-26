@@ -1,11 +1,24 @@
-/*
- * ETML
- * Auteur : Cindy Hardegger
- * Date: 22.01.2019
- * Feuille de style du CRM
- */
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
 
- .glyphicon {
-    color: #333;
+
+li, h1, h2, p, a {
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 150%;
+    text-align: center;
 }
+
+ul, li {
+    list-style: none;
+}
+
+.title {
+    font-size: 250%
+}
+
+.title2 {
+    font-size: 225%
+}
+
+
+
 

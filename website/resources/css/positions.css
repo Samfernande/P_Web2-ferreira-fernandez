@@ -1,0 +1,51 @@
+/*Supprime les marges du body*/
+body {
+    margin : 0
+}
+
+.noMarge {
+    margin: 0;
+}
+
+/*Container dans lequel les objets seront alignés mais espacés*/
+.containerSpaceBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.containerMiddle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alignLeft {
+    list-style: none;
+    float: left;
+    display: flex;
+    align-items: center;
+    padding : 0 2% 0 2%
+}
+  
+.alignRight {
+    list-style: none;
+    float: left;
+    display: flex;
+    align-items: center;
+    padding : 0 2% 0 2%
+}
+
+.alignLeft > li {
+    margin-right: 20%;
+}
+
+.alignRight > li {
+    margin-left: 20%;
+}
+
+.littleImg {
+    width: 20%;
+    margin: 3% 3% 3% 3%;
+}

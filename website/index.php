@@ -5,7 +5,7 @@
     <?php 
     
         include 'controller/ControllerBasePage.php';
-        WriteBasePage(0);    
+        WriteBasePage(0);
     ?>
 
 <html>

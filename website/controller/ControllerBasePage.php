@@ -13,7 +13,7 @@
             $temp .= '../';
         }
 
-        include $temp . 'view/head.php';
+        echo include $temp . 'view/head.php';
 
         echo "<body>";
 
