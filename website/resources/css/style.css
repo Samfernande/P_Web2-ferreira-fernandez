@@ -19,6 +19,18 @@ ul, li {
     font-size: 225%
 }
 
+.textSmall {
+    font-size: 100%;
+}
+
+.horizontalLine {
+    width: 50%; /* pour ne pas qu'elle prenne toute la largeur de la page*/
+    border-top: 2px solid #E0FCFC;
+    margin: 2% auto; /* pour centrer la ligne*/
+}
+
+
+
 
 
 

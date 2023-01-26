@@ -1,25 +1,33 @@
 /*Supprime les marges du body*/
-body {
-    margin : 0
-}
-
 .noMarge {
     margin: 0;
 }
 
-/*Container dans lequel les objets seront alignés mais espacés*/
-.containerSpaceBetween {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+.noPadding {
+    padding: 0;
 }
 
+/*Container dans lequel les objets enfants seront alignés verticalement mais espacés complètement*/
+.containerSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    padding:0 2%;
+}
+
+/*Container dans lequel les objets enfants seront alignés verticalement mais espacés équitablement*/
+.containerSpaceEvenly {
+    display: flex;
+    justify-content: space-evenly;
+    padding:0 2%;
+}
+
+/*Container dans lequel les objets enfants serotn alignés verticalement mais centrés au milieu de la page*/
 .containerMiddle {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
+
+/*Classe qui aligne les objets enfants à gauche et donne une marge à droite*/
 
 .alignLeft {
     list-style: none;
@@ -28,7 +36,9 @@ body {
     align-items: center;
     padding : 0 2% 0 2%
 }
-  
+
+/*Classe qui aligne les objets enfants à droite et donne une marge à gauche*/
+
 .alignRight {
     list-style: none;
     float: left;
@@ -36,6 +46,8 @@ body {
     align-items: center;
     padding : 0 2% 0 2%
 }
+
+/*Classe qui aligne les objets enfants au milieu et donne une marge des deux côtés*/
 
 .alignMiddle {
     list-style: none;
@@ -58,13 +70,16 @@ body {
     margin-right: 10%;
 }
 
-.littleImg {
-    width: 20%;
-    margin: 3% 3% 3% 3%;
-}
-
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.littleSideMarge {
+    margin: 0 2%;
+}
+
+.sideMarge {
+    margin: 0 5%;
 }

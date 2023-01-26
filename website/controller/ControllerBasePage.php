@@ -15,7 +15,7 @@
 
         include $temp . 'view/head.php';
 
-        echo "<body>";
+        echo "<body class = noMarge>";
 
             include $temp . 'view/header.php';
             include $temp . 'view/footer.php';
