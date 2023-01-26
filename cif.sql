@@ -1,11 +1,27 @@
+--
+-- Création de la base de données : `db_cif`
+--
+
 drop database if exists db_cif;
 
 create database if not exists db_cif;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_categorie`
+--
+
 create table if not exists db_cif.t_categorie(
     idCategorie int unsigned primary key not null auto_increment,
-    carTitre varchar(50) not null
+    catTitre varchar(50) not null
 );
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_utilisateur`
+--
 
 create table if not exists db_cif.t_utilisateur(
     idUtilisateur int unsigned primary key not null auto_increment,
@@ -13,6 +29,12 @@ create table if not exists db_cif.t_utilisateur(
     utiMotDePasse varchar(25) not null,
     utiDate date not null
 );
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_cif`
+--
 
 create table if not exists db_cif.t_cif(
     idCif int unsigned primary key not null auto_increment,
@@ -22,6 +44,12 @@ create table if not exists db_cif.t_cif(
     fkUtilisateur int unsigned not null,
     fkCategorie int unsigned not null
 );
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_evaluation`
+--
 
 create table if not exists db_cif.t_evaluation(
     idEvaluation int unsigned primary key not null auto_increment,
@@ -42,6 +70,13 @@ alter table db_cif.t_evaluation
 alter table db_cif.t_evaluation
     add constraint fk_idCif foreign key (fkCif) references db_cif.t_cif(idCif) on delete cascade on update cascade;
 
+
+ALTER TABLE db_cif.t_categorie
+	ADD CONSTRAINT unique_categorieTitre UNIQUE (catTitre);
+
+ALTER TABLE db_cif.t_cif
+	ADD CONSTRAINT unique_cifTitre UNIQUE (cifTitre);
+
 ALTER TABLE db_cif.t_utilisateur
-	ADD CONSTRAINT unique_pseudo UNIQUE (utiPseudo);
+	ADD CONSTRAINT unique_utiPseudo UNIQUE (utiPseudo);
 
