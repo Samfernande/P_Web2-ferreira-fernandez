@@ -30,6 +30,12 @@ create table if not exists db_cif.t_utilisateur(
     utiDate date not null
 );
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_cif`
+--
+
 create table if not exists db_cif.t_cif(
     idCif int unsigned primary key not null auto_increment,
     cifTitre varchar(100) not null,
@@ -38,6 +44,12 @@ create table if not exists db_cif.t_cif(
     fkUtilisateur int unsigned not null,
     fkCategorie int unsigned not null
 );
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_evaluation`
+--
 
 create table if not exists db_cif.t_evaluation(
     idEvaluation int unsigned primary key not null auto_increment,
