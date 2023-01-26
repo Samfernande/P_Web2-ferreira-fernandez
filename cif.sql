@@ -3,19 +3,19 @@ drop database if exists db_cif;
 create database if not exists db_cif;
 
 create table if not exists db_cif.t_categorie(
-    idCategorie int unsigned primary key not null,
+    idCategorie int unsigned primary key not null auto_increment,
     carTitre varchar(50) not null
 );
 
 create table if not exists db_cif.t_utilisateur(
-    idUtilisateur int unsigned primary key not null,
+    idUtilisateur int unsigned primary key not null auto_increment,
     utiPseudo varchar(25) not null,
     utiMotDePasse varchar(25) not null,
     utiDate date not null
 );
 
 create table if not exists db_cif.t_cif(
-    idCif int unsigned primary key not null,
+    idCif int unsigned primary key not null auto_increment,
     cifTitre varchar(100) not null,
     cifDescription varchar(1000) not null,
     cifDate date not null,
@@ -24,13 +24,13 @@ create table if not exists db_cif.t_cif(
 );
 
 create table if not exists db_cif.t_evaluation(
-    idEvaluation int unsigned primary key not null,
+    idEvaluation int unsigned primary key not null auto_increment,
     evaNote int unsigned not null,
     fkUtilisateur int unsigned
 );
 
 create table if not exists db_cif.t_contenir(
-    idContenir int unsigned primary key not null,
+    idContenir int unsigned primary key not null auto_increment,
     fkEvaluation int unsigned not null,
     fkCif int unsigned not null
 );
