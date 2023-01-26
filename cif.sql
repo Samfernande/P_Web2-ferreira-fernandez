@@ -17,6 +17,12 @@ create table if not exists db_cif.t_categorie(
     catTitre varchar(50) not null
 );
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_utilisateur`
+--
+
 create table if not exists db_cif.t_utilisateur(
     idUtilisateur int unsigned primary key not null auto_increment,
     utiPseudo varchar(25) not null,
