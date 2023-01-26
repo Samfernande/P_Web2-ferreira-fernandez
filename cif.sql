@@ -25,13 +25,8 @@ create table if not exists db_cif.t_cif(
 
 create table if not exists db_cif.t_evaluation(
     idEvaluation int unsigned primary key not null auto_increment,
-    evaNote int unsigned not null,
-    fkUtilisateur int unsigned
-);
-
-create table if not exists db_cif.t_contenir(
-    idContenir int unsigned primary key not null auto_increment,
-    fkEvaluation int unsigned not null,
+    evaNote decimal(2,1) unsigned not null,
+    fkUtilisateur int unsigned not null,
     fkCif int unsigned not null
 );
 
@@ -44,10 +39,7 @@ alter table db_cif.t_cif
 alter table db_cif.t_evaluation
     add constraint fk_idUtilisateur_eval foreign key (fkUtilisateur) references db_cif.t_utilisateur(idUtilisateur) on delete cascade on update cascade;
 
-alter table db_cif.t_contenir
-    add constraint fk_idEvaluation_cif foreign key (fkEvaluation) references db_cif.t_evaluation(idEvaluation) on delete cascade on update cascade;
-
-alter table db_cif.t_contenir
+alter table db_cif.t_evaluation
     add constraint fk_idCif foreign key (fkCif) references db_cif.t_cif(idCif) on delete cascade on update cascade;
 
 ALTER TABLE db_cif.t_utilisateur
