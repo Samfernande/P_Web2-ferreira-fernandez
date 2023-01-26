@@ -25,7 +25,7 @@ create table if not exists db_cif.t_cif(
 
 create table if not exists db_cif.t_evaluation(
     idEvaluation int unsigned primary key not null auto_increment,
-    evaNote decimal(2,1) unsigned not null,
+    evaNote DECIMAL(3,1) CHECK (MOD(evaNote, 0.5) = 0),
     fkUtilisateur int unsigned not null,
     fkCif int unsigned not null
 );
