@@ -5,6 +5,7 @@
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
+/*Place une ligne en dessous de l'élément parent*/
 .animationLink::before {
     content: "";
     position: absolute;
@@ -15,6 +16,7 @@
     transition: width 0.2s ease-in-out;
 }
 
+/*Augmente la taille du texte quand la souris passe au-dessus*/
 .animationLink:hover {
     transform: scale(1.15);
 }
@@ -23,12 +25,32 @@
     width: 100%;
 }
 
-.rotatingElement {
-    animation: spinning 1.5s ease-out;
+  .dropdown {
+    position: relative;
+    display: inline-block;
   }
   
-  @keyframes spinning {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #5C6C73;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
   }
+  
+  .dropdown-content a {
+    padding: 4% 2%;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #ddd;
+}
+  
+  .show {
+    display: block;
+}
   

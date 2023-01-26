@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
 
 
-li, h1, h2, p, a {
+li, h1, h2, p, a, button {
     font-family: 'Edu SA Beginner', cursive;
     font-size: 150%;
     text-align: center;
+    text-decoration: none;
 }
 
 ul, li {
@@ -28,6 +29,16 @@ ul, li {
     border-top: 2px solid #E0FCFC;
     margin: 2% auto; /* pour centrer la ligne*/
 }
+
+.dropbtn {
+    background-color: #253337;
+    color: #E0FCFC;
+    border: none;
+    cursor: pointer;
+  }
+   
+  
+
 
 
 
