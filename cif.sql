@@ -1,6 +1,16 @@
+--
+-- Création de la base de données : `db_cif`
+--
+
 drop database if exists db_cif;
 
 create database if not exists db_cif;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_categorie`
+--
 
 create table if not exists db_cif.t_categorie(
     idCategorie int unsigned primary key not null auto_increment,
