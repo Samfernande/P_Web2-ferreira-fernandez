@@ -7,6 +7,8 @@
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.0.19
 
+drop database if exists db_cif;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
