@@ -1,29 +1,37 @@
-<footer class = "containerMiddle backgroundDarkBlue footer">
+<footer class = "backgroundDarkBlue footer">
 
-<div class = "containerSpaceBetween noMarge">
 
-    <ul class = alignMiddle>
-        <li class = "colorWhite animationLink">
-            Sons
+<div class="horizontalLine"></div>
+
+    <ul class = "containerMiddle noPadding">
+
+        <li class = "colorWhite animationLink textSmall littleSideMarge">
+            Accueil
         </li>
 
-        <li class = "colorWhite animationLink">
-            Ajouter un son
+        <li class = "colorWhite animationLink textSmall littleSideMarge">
+            Tous les CIFs
         </li>
 
-        <li class = "colorWhite animationLink">
-            Aide
+        <li class = "colorWhite animationLink textSmall littleSideMarge">
+            Ajouter un CIF
         </li>
 
-        <li class = "colorWhite animationLink">
-            Contact
-        </li>
-
-        <li class = "colorWhite animationLink">
+        <li class = "colorWhite animationLink textSmall littleSideMarge">
             Connexion
         </li>
+
+        <li class = "colorWhite animationLink textSmall littleSideMarge ">
+            Inscription
+        </li>
+
     </ul>
 
-</div>
+<div class="horizontalLine"></div>
+
+<p class = colorWhite>
+ETML, Tout droit réservé - Ferreira joao - Fernandez Samuel
+</p>
+
 
 </footer>
