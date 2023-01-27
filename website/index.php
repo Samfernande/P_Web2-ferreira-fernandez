@@ -3,9 +3,8 @@
 <html>
 
     <?php 
-    
         include 'controller/ControllerBasePage.php';
-        include WriteBasePage(0);
+        WriteBasePage(0);
     ?>
 
 <html>
