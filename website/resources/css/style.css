@@ -21,7 +21,11 @@ ul, li {
 }
 
 .textSmall {
-    font-size: 100%;
+    font-size: 120%;
+}
+
+.textDropDownSmall {
+    font-size: 80%;
 }
 
 .horizontalLine {
