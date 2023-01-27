@@ -27,7 +27,7 @@ create table if not exists db_cif.t_utilisateur(
     idUtilisateur int unsigned primary key not null auto_increment,
     utiPseudo varchar(25) not null,
     utiMotDePasse varchar(25) not null,
-    utiDate date not null
+    utiDateEntree date not null
 );
 
 -- --------------------------------------------------------
