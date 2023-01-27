@@ -4,8 +4,8 @@
 
             <ul class = alignLeft>
 
-                <li class = "colorWhite animationLink">
-                    LOGO
+                <li class = "colorWhite">
+                    <img src= "website/resources/img/logo.png" alt = "logo" class = "littleImg animationLink">
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">

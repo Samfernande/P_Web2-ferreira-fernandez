@@ -37,7 +37,10 @@ ul, li {
     cursor: pointer;
   }
    
-  
+.littleImg {
+    width: 150%;
+    margin: 0;
+}
 
 
 
