@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans&family=Josefin+Sans:ital,wght@1,300&display=swap');
 
-
-li, h1, h2, p, a, button {
-    font-family: 'Albert Sans', sans-serif;
-    font-size: 150%;
-    text-align: center;
-    text-decoration: none;
-}
-
-ul, li {
-    list-style: none;
-}
-
 .title {
     font-size: 250%
 }
@@ -22,6 +10,10 @@ ul, li {
 
 .textSmall {
     font-size: 120%;
+}
+
+.textSmall2 {
+    font-size: 100%;
 }
 
 .textDropDownSmall {
@@ -44,6 +36,10 @@ ul, li {
 .littleImg {
     width: 150%;
     margin: 0;
+}
+
+.borderRound {
+    border-radius: 10px; /* pour créer des bords légèrement arrondis */
 }
 
 
