@@ -1,17 +1,25 @@
-/*Supprime les marges du body*/
-.noMarge {
-    margin: 0;
-}
-
-.noPadding {
-    padding: 0;
-}
-
 /*Container dans lequel les objets enfants seront alignés verticalement mais espacés complètement*/
 .containerSpaceBetween {
     display: flex;
     justify-content: space-between;
     padding:0 2%;
+}
+
+/*Container dans lequel les objets enfants seront en colonne mais alignés à gauche*/
+.containerLeft {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding:0 2%;
+}
+
+/*Container dans lequel les objets enfants seront en colonne mais alignés à gauche*/
+.containerRight {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding:0 2%;
+    width: 100;
 }
 
 /*Container dans lequel les objets enfants seront alignés verticalement mais espacés équitablement*/
@@ -34,7 +42,7 @@
     float: left;
     display: flex;
     align-items: center;
-    padding : 0 2% 0 2%
+    padding : 0 2% 0 2%;
 }
 
 /*Classe qui aligne les objets enfants à droite et donne une marge à gauche*/
@@ -70,16 +78,55 @@
     margin-right: 10%;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+/*Ajoute de légères marges de côté aux éléments*/
 
 .littleSideMarge {
     margin: 0 2%;
 }
 
+/*Ajoute des marges de côté aux éléments*/
+
 .sideMarge {
     margin: 0 10%;
 }
+
+.bottomPadding {
+    padding: 0 0 5% 0;
+}
+
+.littlePadding {
+    padding: 8%;
+}
+
+.bigWidth {
+    width: 100%;
+}
+
+/*Supprime les marges*/
+.noMarge {
+    margin: 0;
+}
+
+.noPadding {
+    padding: 0;
+}
+
+.t {
+    width: 410px; 
+    height: 25px;
+}
+
+.textLeft{
+    text-align: left;
+}
+
+/*Container dans lequel les objets enfants serotn alignés verticalement mais centrés au milieu de la page*/
+.containerMiddleColumns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+

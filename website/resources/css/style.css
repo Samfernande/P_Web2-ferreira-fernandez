@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
-
-
-li, h1, h2, p, a, button {
-    font-family: 'Edu SA Beginner', cursive;
-    font-size: 150%;
-    text-align: center;
-    text-decoration: none;
-}
-
-ul, li {
-    list-style: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans&family=Josefin+Sans:ital,wght@1,300&display=swap');
 
 .title {
     font-size: 250%
@@ -21,7 +9,15 @@ ul, li {
 }
 
 .textSmall {
+    font-size: 120%;
+}
+
+.textSmall2 {
     font-size: 100%;
+}
+
+.textDropDownSmall {
+    font-size: 80%;
 }
 
 .horizontalLine {
@@ -37,7 +33,14 @@ ul, li {
     cursor: pointer;
   }
    
-  
+.littleImg {
+    width: 150%;
+    margin: 0;
+}
+
+.borderRound {
+    border-radius: 10px; /* pour créer des bords légèrement arrondis */
+}
 
 
 

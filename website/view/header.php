@@ -4,8 +4,8 @@
 
             <ul class = alignLeft>
 
-                <li class = "colorWhite animationLink">
-                    LOGO
+                <li class = "colorWhite">
+                    <img src= "/resources/img/logo.png" alt = "logo" class = "littleImg animationLink">
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">
@@ -16,8 +16,8 @@
                     <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn textSmall">CIFS</button>
                         <div id="myDropdown" class="dropdown-content">
-                            <a href="#home" class = "textSmall colorWhite">Tous les CIFS</a>
-                            <a href="#about" class = "textSmall colorWhite">Ajouter un CIF</a>
+                            <a href="#home" class = "textDropDownSmall colorWhite">Tous les CIFS</a>
+                            <a href="#about" class = "textDropDownSmall colorWhite">Ajouter un CIF</a>
                         </div>
                     </div>
                 </li>
