@@ -24,12 +24,7 @@ class ModelCategorie extends Model{
               $insertStmt->execute();
             }
         }
-    }
-
-    public function deleteData(){
-
-    }
-    
+    } 
 }
 
 
