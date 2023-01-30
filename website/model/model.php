@@ -11,22 +11,25 @@ class Model {
         $this->connector = new PDO('mysql:host=localhost:6044;dbname=mydb;charset=utf8' , 'root', 'root');
     }
 
-    public function addData($idArray, $catArray){
+    public function addData($catArray){
 
             //$catArray = array("Livre", "Sport", "Art", "Nature", "Voyage", "Culture", "Photographie", "Gastronomie", "Science", "Humanitaire", "Technologie", "Cinéma", "Histoire", "Musique", "Science-fiction", "Fantasy", "Mode");
-            //$idArray = range(1, count($catArray));
-
+            $idArray = range(1, count($catArray));
+            $cat = array_combine($idArray, $catArray);
+    
             $cat = array_combine($idArray, $catArray);
 
-    
-            $req = $this->connector->query('DELETE FROM db_cif.t_categorie');
- 
             foreach ($cat as $id => $categorie) {
-                $stmt = $this->connector->prepare("INSERT INTO db_cif.t_categorie (idCategorie, catTitre)
-                VALUES (:idCategorie, :catTitre)");
-                $stmt->bindParam(':idCategorie', $id);
-                $stmt->bindParam(':catTitre', $categorie);
-                $stmt->execute();
+                $checkStmt = $this->connector->prepare("SELECT * FROM db_cif.t_categorie WHERE catTitre = :catTitre");
+                $checkStmt->bindParam(':catTitre', $categorie);
+                $checkStmt->execute();
+              
+                if ($checkStmt->rowCount() == 0) {
+                  $insertStmt = $this->connector->prepare("INSERT INTO db_cif.t_categorie (idCategorie, catTitre) VALUES (:idCategorie, :catTitre)");
+                  $insertStmt->bindParam(':idCategorie', $id);
+                  $insertStmt->bindParam(':catTitre', $categorie);
+                  $insertStmt->execute();
+                }
             }
     }
     
