@@ -15,4 +15,10 @@ class ModelCif extends Model{
         $stmt->bindParam(':fkCategorie', $categorie);
         $stmt->execute();
     } 
+
+    public function getCif(){
+        $stmt = $this->connector->prepare("SELECT * FROM db_cif.t_cif");
+        $stmt->execute();
+        return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

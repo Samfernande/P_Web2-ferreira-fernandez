@@ -26,7 +26,7 @@ create table if not exists db_cif.t_categorie(
 create table if not exists db_cif.t_utilisateur(
     idUtilisateur int unsigned primary key not null auto_increment,
     utiPseudo varchar(25) not null,
-    utiMotDePasse varchar(25) not null,
+    utiMotDePasse varchar(255) not null,
     utiDateEntree date not null
 );
 
@@ -38,7 +38,7 @@ create table if not exists db_cif.t_utilisateur(
 
 create table if not exists db_cif.t_cif(
     idCif int unsigned primary key not null auto_increment,
-    cifTitre varchar(100) not null,
+    cifTitre varchar(35) not null,
     cifDescription varchar(1000) not null,
     cifDate date not null,
     fkUtilisateur int unsigned not null,
