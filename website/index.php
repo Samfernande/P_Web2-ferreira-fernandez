@@ -20,7 +20,7 @@
     $cat = array_combine($idArray, $catArray);
 
     
-    var_dump($cat);
+    $req = $connector->query('DELETE FROM db_cif.t_categorie');
  
     foreach ($cat as $id => $categorie) {
         $stmt = $connector->prepare("INSERT INTO db_cif.t_categorie (idCategorie, catTitre)
