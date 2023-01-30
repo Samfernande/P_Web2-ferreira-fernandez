@@ -11,7 +11,7 @@
 
         $view->render('main.php');
 
-        $model->addData("yolo");
+        $model->addData();
 
 
         $connector = new PDO('mysql:host=localhost:6044;dbname=mydb;charset=utf8' , 'root', 'root');
