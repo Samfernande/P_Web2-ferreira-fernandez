@@ -5,7 +5,7 @@
             <ul class = alignLeft>
 
                 <li class = "colorWhite">
-                    <img src= "/resources/img/logo.png" alt = "logo" class = "littleImg animationLink">
+                    <img src= "/website/resources/img/logo.png" alt = "logo" class = "littleImg animationLink">
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">
