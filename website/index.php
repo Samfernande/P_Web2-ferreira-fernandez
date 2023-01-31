@@ -9,6 +9,14 @@
         $controllerMain = new ControllerMain();
         $modelCif = new ModelCif();
         
+        $cif = $modelCif->getCif();
+
+        for($i = 0; $i <= 5; $i++){
+            if($i == $cif[$i]['idCif']){
+                echo $cif[$i]['idCif'];
+            }
+        }
+        
     ?>
 
 
