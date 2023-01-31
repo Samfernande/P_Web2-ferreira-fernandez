@@ -8,6 +8,14 @@
 
         $controllerMain = new ControllerMain();
         $modelCif = new ModelCif();
+
+        for ($i=0; $i < 6 ; $i++){
+
+            $modelCif->addCif("J'adore les zizis", "H", $i, $i);
+            
+        }
+
+        
         
         $cif = $modelCif->getCif();
 
