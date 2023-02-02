@@ -9,7 +9,7 @@
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">
-                    <a href="?link=index" class = "textDropDownSmall colorWhite"> Accueil</a>
+                    <a href="?link=index" class = "textSmall colorWhite"> Accueil</a>
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">
@@ -27,7 +27,7 @@
             <ul class = alignRight>
 
             <li class = "colorWhite animationLink">
-                   <a href="?link=login" class = "textDropDownSmall colorWhite"> Connexion</a>
+                   <a href="?link=login" class = "textSmall colorWhite"> Connexion</a>
                 </li>
 
             </ul>

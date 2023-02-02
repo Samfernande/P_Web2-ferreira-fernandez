@@ -98,6 +98,10 @@
     padding: 3%;
 }
 
+.bigPadding {
+    padding: 10%;
+}
+
 .bigWidth {
     width: 100%;
 }
