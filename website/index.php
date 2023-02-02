@@ -2,29 +2,15 @@
 
 <html>
 
-    <?php 
-    include_once "controller/ControllerMain.php";
-    include_once "model/ModelCif.php";
+    <?php
 
-        $controllerMain = new ControllerMain();
-        $modelCif = new ModelCif();
+        include "controller/Controller.php";
 
-        for ($i=0; $i < 6 ; $i++){
-
-            $modelCif->addCif("J'adore les zizis", "H", $i, $i);
-            
-        }
-
+        // Instancie le controller principal
+        $controller = new Controller();
         
-        
-        $cif = $modelCif->getCif();
-
-        for($i = 0; $i <= 5; $i++){
-            if($i == $cif[$i]['idCif']){
-                echo $cif[$i]['idCif'];
-            }
-        }
-        
+        // Depuis le controller principal, récupère le lien sur lequel l'utilisateur a cliqué, puis génère le controlleur correspondant
+        $controller->CreateController();
     ?>
 
 

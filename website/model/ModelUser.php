@@ -3,6 +3,7 @@
 include_once "model.php";
 
 class ModelUser extends Model{
+    
     public function addUser($userPseudo, $userPassword){
         $date = date('y-m-d');
 

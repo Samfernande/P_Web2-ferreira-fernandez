@@ -18,7 +18,7 @@ class View {
          echo "<body class = 'noMarge'>";
  
              include 'view/header.php';
-             include 'view/page/' . 'main.php';
+             include 'view/page/' . $view_name;
              include 'view/footer.php';
              
          echo "</body>";

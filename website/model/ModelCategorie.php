@@ -4,7 +4,7 @@ include_once "model.php";
 
 class ModelCategorie extends Model{
 
-    private function addData(){
+    public function addData(){
 
         $catArray = array("Livre", "Sport", "Art", "Nature", "Voyage", "Culture", "Photographie", "Gastronomie", "Science", "Humanitaire", "Technologie", "Cinéma", "Histoire", "Musique", "Science-fiction", "Fantasy", "Mode");
         $idArray = range(1, count($catArray));
