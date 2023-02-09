@@ -30,12 +30,12 @@ class ControllerLogin extends Controller
                 }
                 else
                 {
-                    $_GET['link'] = 'login';
+                    $_GET['link'] = 'index';
                 }
             }
         }
 
-
+        var_dump($_GET['link']);
 
     }
 }
