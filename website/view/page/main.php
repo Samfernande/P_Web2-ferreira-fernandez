@@ -1,7 +1,6 @@
 <div class = "backgroundBlue littlePadding">
-
+<br><br>
     <div class = "containerLeft">
-
         <h1 class = "colorWhite littlePadding">
             Les derniers CIFs ajoutés
         </h1>
