@@ -9,7 +9,6 @@ class ControllerLogin extends Controller
     private $user;
 
     public function __construct() {
-
         $this->view = new View();
         $this->view->render('login.php', "");
         $this->user = new ModelUser();
@@ -23,11 +22,15 @@ class ControllerLogin extends Controller
 
         if(!empty($username) || !empty($password)) 
         {
-            foreach ($this->user as $id => $user)
+            foreach ($this->user->getUser() as $userData => $userKey)
             {
-                if ($username['utiPseudo'] != $username)
+                if ($userKey['utiPseudo'] == $username)
                 {
-                    echo var_dump('YES');
+                    $_GET['link'] = 'index';
+                }
+                else
+                {
+                    $_GET['link'] = 'login';
                 }
             }
         }

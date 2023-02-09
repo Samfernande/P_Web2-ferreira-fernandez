@@ -3,7 +3,7 @@
     <div class= 'containerMiddleColumns'>
         <h1 class='colorDarkBlue'>Connexion</h1>
         
-        <form class='backgroundSky' method='POST'>
+        <form class='backgroundSky' method='POST' action=''>
             
             <label for="username" class = 'textSmall colorDarkBlue'>Pseudo</label><br>
             <input type="text" id="username" name="username" required><br><br>
