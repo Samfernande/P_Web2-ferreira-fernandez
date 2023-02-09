@@ -17,7 +17,16 @@ class ModelCif extends Model{
     } 
 
     public function getCif($number){
-        $stmt = $this->connector->prepare("SELECT * FROM db_cif.t_cif, db_cif.t_categorie, db_cif.t_utilisateur WHERE fkCategorie = idCategorie AND fkUtilisateur = idUtilisateur ORDER BY cifDate DESC LIMIT $number");
+        $stmt = $this->connector->prepare(
+        "SELECT t_cif.idCif, t_cif.cifTitre, t_utilisateur.utiPseudo, ROUND(CEIL(AVG(t_evaluation.evaNote) * 2) / 2, 1) AS average, catTitre
+        FROM db_cif.t_cif 
+        INNER JOIN db_cif.t_utilisateur ON t_cif.fkUtilisateur = t_utilisateur.idUtilisateur 
+        INNER JOIN db_cif.t_evaluation ON t_cif.idCif = t_evaluation.fkCif 
+        INNER JOIN db_cif.t_categorie ON t_cif.fkCategorie = t_categorie.idCategorie 
+        GROUP BY t_cif.idCif 
+        ORDER BY average DESC 
+        LIMIT $number");
+
         $stmt->execute();
         return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

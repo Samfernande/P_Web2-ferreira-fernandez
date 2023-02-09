@@ -11,7 +11,7 @@
                 <div class = "containerLeft">
 
                     <?php 
-                    echo $data[0]['cifTitre'];
+                    echo $data;
                     ?>
 
                 </div>
