@@ -1,8 +1,3 @@
-<?php 
-    $view = new View("test");
-    $CIFs = $view->WriteCIF(5);
-?>
-
 <div class = "backgroundBlue littlePadding">
 
     <div class = "containerLeft">
@@ -15,7 +10,7 @@
 
                 <div class = "containerLeft">
 
-                    <?php echo $CIFs; ?>
+                    <?php //echo $CIFs; ?>
 
                 </div>
     

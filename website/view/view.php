@@ -24,34 +24,4 @@ class View {
          echo "</body>";
      }
 
-     /*Méthode permettant de créer la liste de CIF suivant les données reçues par le modèle*/
-     function WriteCIF($number)
-        {
-            $data = "";
-
-        for ($i=0; $i < $number; $i++)
-        {
-            $data .= "<h1 class = 'noMarge'>Resto</h1>
-    
-            <div class = 'backgroundSky borderRound containerLeft'>
-
-                <div class = 't'>
-                    <p class = 'noMarge colorDarkBlue textSmall textLeft'>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-                </div>
-
-                <p class = 'noMarge colorDarkBlue textSmall2'>De Paul</p>
-
-            </div>
-
-            <div class = 'containerMiddle'>
-                <p class = 'noMarge'>✩</p>
-                <p class = 'noMarge'>✩</p>
-                <p class = 'noMarge'>✩</p>
-                <p class = 'noMarge'>✩</p>
-                <p class = 'noMarge'>✩</p>
-            </div>";
-        }
-
-        return $data;
-    }
 }

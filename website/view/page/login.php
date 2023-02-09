@@ -21,7 +21,7 @@
     <div class= 'containerMiddleColumns'>
         <h1 class='colorDarkBlue'>Pas encore inscrit ?</h1>
         
-        <form>
+        <form class='backgroundSky'>
             
             <label for="username" class = 'textSmall'>Pseudo</label><br>
             <input type="text" id="username" name="username"><br><br>
