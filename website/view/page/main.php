@@ -1,5 +1,4 @@
 <?php 
-    include_once '../view.php';
     $view = new View("test");
     $CIFs = $view->WriteCIF(5);
 ?>
@@ -8,7 +7,7 @@
 
     <div class = "containerLeft">
 
-        <h1 class = "colorWhite">
+        <h1 class = "colorWhite littlePadding">
             Les derniers CIFs ajoutés
         </h1>
 
