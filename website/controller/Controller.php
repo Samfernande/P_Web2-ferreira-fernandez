@@ -7,7 +7,7 @@ include_once "ControllerMain.php";
 
 class Controller {
 
-    public $view;
+    protected $view;
     private $actualController;
     
     public function __construct() {
