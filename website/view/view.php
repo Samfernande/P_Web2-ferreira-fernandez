@@ -23,5 +23,5 @@ class View {
              
          echo "</body>";
      }
-
+     
 }
