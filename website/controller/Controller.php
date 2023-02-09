@@ -36,7 +36,7 @@ class Controller {
                     $this->actualController = new ControllerLogin();
                     break;
                 default:
-                    // Traitement pour une erreur
+                    $this->actualController = new ControllerMain();
                     break;
             }
             // Sinon instancie le controlleur main

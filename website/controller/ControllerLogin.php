@@ -20,23 +20,23 @@ class ControllerLogin extends Controller
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 
+        header("Location: index.php");
+        exit();
+
         if(!empty($username) || !empty($password)) 
         {
             foreach ($this->user->getUser() as $userData => $userKey)
             {
                 if ($userKey['utiPseudo'] == $username)
                 {
-                    $_GET['link'] = 'index';
+                    header("Location: index.php?link=index");
                 }
-                else
-                {
-                    $_GET['link'] = 'index';
-                }
+
             }
+
+
+
         }
-
-        var_dump($_GET['link']);
-
     }
 }
 
