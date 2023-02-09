@@ -10,7 +10,13 @@
 
                 <div class = "containerLeft">
 
-                    <?php //echo $CIFs; ?>
+                    <?php 
+                    $array = $this->data;
+                    foreach($array as $cif) {
+                        echo $cif['cifTitre'] . '<br>';
+                    }
+                    
+                    ?>
 
                 </div>
     
