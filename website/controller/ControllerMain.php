@@ -41,13 +41,13 @@ class ControllerMain extends Controller{
             </div><div class = 'containerMiddle'>";
         
             for ($i = 0; $i < $fullStars; $i++) {
-                $data .= "<p class = 'noMarge'>★</p>";
+                $data .= "<p class = 'noMarge'><span class='star'>★</span></p>";
             }
             if ($halfStars) {
-                $data .= "<p class = 'noMarge'>☆</p>";
+                $data .= "<p class = 'noMarge'><span class='star'>☆</span></p>";
             }
             for ($i = 0; $i < $emptyStars; $i++) {
-                $data .= "<p class = 'noMarge'>☆</p>";
+                $data .= "<p class = 'noMarge'><span class='star'>☆</span></p>";
             }
             $data .= "</div>";
 

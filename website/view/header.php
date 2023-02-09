@@ -17,7 +17,7 @@
                         <button onclick="myFunction()" class="dropbtn textSmall">CIFS</button>
                         <div id="myDropdown" class="dropdown-content">
                             <a href="?link=allCIF" class = "textDropDownSmall colorWhite">Tous les CIFS</a>
-                            <a href="?link=addCIF" class = "textDropDownSmall colorWhite">Ajouter un CIF</a>
+                            <a href="?link=addCIF" class = "textDropDownSmall colorWhite">Ajouter une CIF</a>
                         </div>
                     </div>
                 </li>
