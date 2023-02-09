@@ -16,8 +16,8 @@ class ModelCif extends Model{
         $stmt->execute();
     } 
 
-    public function getCif(){
-        $stmt = $this->connector->prepare("SELECT * FROM db_cif.t_cif");
+    public function getCif($number){
+        $stmt = $this->connector->prepare("SELECT * FROM db_cif.t_cif ORDER BY cifDate DESC LIMIT $number;");
         $stmt->execute();
         return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
