@@ -12,6 +12,24 @@
 
                     <?php 
                     echo $data[0]['cifTitre'];
+                    $array = $this->data;
+                    foreach($array as $cif) {
+                        echo "<h1 class = 'noMarge'>". $cif['catTitre'] . "</h1>
+                        <div class = 'backgroundSky borderRound containerLeft'>
+                        <div class = 't'>
+                        <p class = 'noMarge colorDarkBlue textSmall textLeft'>". $cif['cifTitre'] . "</p>
+                        </div>
+                        <p class = 'noMarge colorDarkBlue textSmall2'>". $cif['utiPseudo'] . "</p>
+                        </div>
+                        <div class = 'containerMiddle'>
+                        <p class = 'noMarge'>✩</p>
+                        <p class = 'noMarge'>✩</p>
+                        <p class = 'noMarge'>✩</p>
+                        <p class = 'noMarge'>✩</p>
+                        <p class = 'noMarge'>✩</p>
+                        </div>";
+                    }
+                    
                     ?>
 
                 </div>
