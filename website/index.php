@@ -5,7 +5,7 @@
     <?php
 
         include "controller/Controller.php";
-
+  
         // Instancie le controller principal
         $controller = new Controller();
         
