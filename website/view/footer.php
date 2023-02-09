@@ -30,7 +30,7 @@
 <div class="horizontalLine"></div>
 
 <p class = colorWhite>
-ETML, Tout droit réservé - Ferreira joao - Fernandez Samuel
+ETML, Tout droit réservé - Ferreira João - Fernandez Samuel
 </p>
 
 

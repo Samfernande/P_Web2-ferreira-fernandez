@@ -18,20 +18,39 @@ class ControllerMain extends Controller{
         $data = "";
         $array = $this->cif->getCif(5);
         foreach($array as $cif) {
-            $data .= "<h1 class = 'noMarge'>". $cif['catTitre'] . "</h1>
+            $eval = $cif['average'];
+            $title = $cif['catTitre'];
+            $name = $cif['cifTitre'];
+            $username = $cif['utiPseudo'];
+            $fullStars = floor($eval);
+
+            if ($eval - $fullStars >= 0.5) {
+                $halfStars = 1;
+            } else {
+                $halfStars = 0;
+            }
+
+            $emptyStars = 5 - $fullStars - $halfStars;
+
+            $data .= "<h1 class = 'noMarge'>$title</h1>
             <div class = 'backgroundSky borderRound containerLeft'>
             <div class = 't'>
-            <p class = 'noMarge colorDarkBlue textSmall textLeft'>". $cif['cifTitre'] . "</p>
+            <p class = 'noMarge colorDarkBlue textSmall textLeft'>$name</p>
             </div>
-            <p class = 'noMarge colorDarkBlue textSmall2'>". $cif['utiPseudo'] . "</p>
-            </div>
-            <div class = 'containerMiddle'>
-            <p class = 'noMarge'>✩</p>
-            <p class = 'noMarge'>✩</p>
-            <p class = 'noMarge'>✩</p>
-            <p class = 'noMarge'>✩</p>
-            <p class = 'noMarge'>✩</p>
-            </div>";
+            <p class = 'noMarge colorDarkBlue textSmall2'>$username</p>
+            </div><div class = 'containerMiddle'>";
+        
+            for ($i = 0; $i < $fullStars; $i++) {
+                $data .= "<p class = 'noMarge'>★</p>";
+            }
+            if ($halfStars) {
+                $data .= "<p class = 'noMarge'>☆</p>";
+            }
+            for ($i = 0; $i < $emptyStars; $i++) {
+                $data .= "<p class = 'noMarge'>☆</p>";
+            }
+            $data .= "</div>";
+
         }
         return $data;
     }
