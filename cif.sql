@@ -53,7 +53,7 @@ create table if not exists db_cif.t_cif(
 
 create table if not exists db_cif.t_evaluation(
     idEvaluation int unsigned primary key not null auto_increment,
-    evaNote DECIMAL(3,1) CHECK (MOD(evaNote, 0.5) = 0),
+    evaNote DECIMAL(3,1) CHECK (MOD(evaNote, 0.5) = 0) not null,
     fkUtilisateur int unsigned not null,
     fkCif int unsigned not null
 );
