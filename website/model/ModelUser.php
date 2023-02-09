@@ -13,5 +13,11 @@ class ModelUser extends Model{
         $stmt->bindParam(':utiMotDePasse', $userPassword);
         $stmt->bindParam(':utiDateEntree', $date);
         $stmt->execute();
-    } 
+    }
+
+    public function getUser(){
+        $stmt = $this->connector->prepare("SELECT * FROM db_cif.t_utilisateur");
+        $stmt->execute();
+        return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
