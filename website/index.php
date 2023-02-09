@@ -11,6 +11,8 @@
         
         // Depuis le controller principal, récupère le lien sur lequel l'utilisateur a cliqué, puis génère le controlleur correspondant
         $controller->CreateController();
+
+
     ?>
 
 

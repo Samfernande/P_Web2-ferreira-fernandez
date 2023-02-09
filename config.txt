@@ -2,4 +2,4 @@ Si changement de poste :
 
 - Dans php.ini : extension=pdo_mysql
 - Docker : Docker compose up -d
-- Ajouter cif.sql dans la db
+- Ajouter db_cif.sql dans la db
