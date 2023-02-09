@@ -10,8 +10,8 @@ class ControllerMain extends Controller{
 
     public function __construct() {
         $this->cif = new ModelCif();
-        $this->view = new View($this->cif->getCif(5));
-        $this->view->render('main.php');
+        $this->view = new View();
+        $this->view->render('main.php', $this->cif->getCif(5));
 
     }
 }

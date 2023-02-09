@@ -9,7 +9,7 @@ class ControllerLogin extends Controller{
     public function __construct() {
 
         $this->view = new View();
-        $this->view->render('login.php');
+        $this->view->render('login.php', "");
     }
 }
 
