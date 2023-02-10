@@ -27,8 +27,9 @@ class ControllerCheck extends Controller
             {
                 if (strtolower($userKey['utiPseudo']) == strtolower($username))
                 {
-                    session_start();
                     $_SESSION['isConnected'] = 1;
+                    $_SESSION['idUtilisateur'] = $userKey['idUtilisateur'];
+
                     $this->data = 'Connexion réussie !';
                     exit();
                 }

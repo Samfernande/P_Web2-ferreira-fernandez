@@ -26,9 +26,9 @@
             
             <ul class = alignRight>
 
-            <li class = "colorWhite animationLink">
-                   <a href="?link=login" class = "textSmall colorWhite"> Connexion</a>
-                </li>
+            <li class = "colorWhite">
+                <a href="?link=login"> <img src= "/website/resources/img/login.png" alt = "login" class = "veryLittleImg animationLink"> </a>
+            </li>
 
             </ul>
 

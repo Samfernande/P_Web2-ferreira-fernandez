@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+if ($_SESSION['isConnected'] == 1)
+    session_start(); 
+?>
 
 <div class='backgroundLightBlue bigPadding containerSpaceEvenly'>
 
