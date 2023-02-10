@@ -11,7 +11,12 @@ class ControllerMain extends Controller{
     public function __construct() {
         $this->cif = new ModelCif();
         $this->view = new View();
+
+
         $this->view->render('main.php', $this->fetchData());
+
+        
+
     }
 
     public function fetchData() {

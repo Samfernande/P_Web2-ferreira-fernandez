@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <div class='backgroundLightBlue bigPadding containerSpaceEvenly'>
 
     <div class= 'containerMiddleColumns'>

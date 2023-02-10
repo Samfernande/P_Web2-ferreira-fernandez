@@ -1,9 +1,3 @@
-<?php
-if ($_SESSION['isConnected'] == 1)
-    session_start(); 
-?>
-
-
 <div class = "backgroundBlue littlePadding">
 <br><br>
     <div class = "containerLeft">
@@ -16,7 +10,8 @@ if ($_SESSION['isConnected'] == 1)
                 <div class = "containerLeft">
 
                     <?php 
-                    echo $data;
+                    echo $data; 
+                    var_dump($_SESSION);
                     ?>
 
                 </div>

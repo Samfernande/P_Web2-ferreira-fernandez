@@ -79,7 +79,7 @@ CREATE TABLE `t_cif` (
 --
 
 INSERT INTO `t_cif` (`idCif`, `cifTitre`, `cifDescription`, `cifDate`, `fkUtilisateur`, `fkCategorie`) VALUES
-(1, 'J\'adore les zizis', 'Bonjour, bonjour, je suis joaau et j\'adore les zizis', '2023-02-09', 3, 7),
+(1, 'J\'adore les zizis', 'Bonjour, bonjour, je suis joaau et j\'adore les avions', '2023-02-09', 3, 7),
 (2, 'J\'aime la littérature', 'Bonsoir, Sammuel, 91 ans, j\'adore la littérature.', '2023-02-02', 4, 1),
 (3, 'A L\'AIDE', 'A l\'AIDE, J\'AI TROP DE SWAG', '2023-02-09', 2, 10),
 (4, 'J\'adore la vuie (bis)', 'Je suis joaau, et vraiment, vraiment, j\'adore ça', '2023-02-08', 3, 7),
