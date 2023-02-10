@@ -95,7 +95,11 @@
 }
 
 .littlePadding {
-    padding: 8%;
+    padding: 3%;
+}
+
+.bigPadding {
+    padding: 10%;
 }
 
 .bigWidth {

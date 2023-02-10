@@ -1,23 +1,23 @@
 <header class = "backgroundDarkBlue noMarge">
 
-        <div class = "containerSpaceBetween noMarge">
+        <div class = "containerSpaceEvenly noMarge">
 
             <ul class = alignLeft>
 
                 <li class = "colorWhite">
-                    <img src= "/resources/img/logo.png" alt = "logo" class = "littleImg animationLink">
+                <a href="?link=index"> <img src= "/website/resources/img/logo.png" alt = "logo" class = "littleImg animationLink"> </a>
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">
-                    Accueil
+                    <a href="?link=index" class = "textSmall colorWhite"> Accueil</a>
                 </li>
 
                 <li class = "colorWhite animationLink sideMarge">
                     <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn textSmall">CIFS</button>
                         <div id="myDropdown" class="dropdown-content">
-                            <a href="#home" class = "textDropDownSmall colorWhite">Tous les CIFS</a>
-                            <a href="#about" class = "textDropDownSmall colorWhite">Ajouter un CIF</a>
+                            <a href="?link=allCIF" class = "textDropDownSmall colorWhite">Tous les CIFS</a>
+                            <a href="?link=addCIF" class = "textDropDownSmall colorWhite">Ajouter une CIF</a>
                         </div>
                     </div>
                 </li>
@@ -27,7 +27,7 @@
             <ul class = alignRight>
 
             <li class = "colorWhite animationLink">
-                    Connexion
+                   <a href="?link=login" class = "textSmall colorWhite"> Connexion</a>
                 </li>
 
             </ul>
