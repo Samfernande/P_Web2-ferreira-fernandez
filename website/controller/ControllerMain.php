@@ -22,7 +22,7 @@ class ControllerMain extends Controller{
             $title = $cif['catTitre'];
             $name = $cif['cifTitre'];
             $username = $cif['utiPseudo'];
-            $fullStars = ceil($eval);
+            $fullStars = floor($eval);
 
             if ($eval - $fullStars >= 0.5) {
                 $halfStars = 1;

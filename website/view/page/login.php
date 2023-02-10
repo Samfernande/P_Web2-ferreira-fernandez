@@ -1,9 +1,11 @@
+<?php session_start(); ?>
+
 <div class='backgroundLightBlue bigPadding containerSpaceEvenly'>
 
     <div class= 'containerMiddleColumns'>
         <h1 class='colorDarkBlue'>Connexion</h1>
         
-        <form class='backgroundSky' method='POST'>
+        <form class='backgroundSky' method='POST' action='?link=checkLogin'>
             
             <label for="username" class = 'textSmall colorDarkBlue'>Pseudo</label><br>
             <input type="text" id="username" name="username" required><br><br>
@@ -11,7 +13,7 @@
             <label for="password" class = 'textSmall colorDarkBlue'>Mot de passe</label><br>
             <input type="password" id="password" name="password" required><br><br>
 
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="Envoyer" class='buttonLogins'>
         </form>
 
 
@@ -29,7 +31,7 @@
             <label for="password" class = 'textSmall'>Mot de passe</label><br>
             <input type="password" id="password" name="password" required><br><br>
 
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="Envoyer" class='buttonLogins'>
         </form>
     </div>
 </div>

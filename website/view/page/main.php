@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <div class = "backgroundBlue littlePadding">
 <br><br>
     <div class = "containerLeft">
