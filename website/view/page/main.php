@@ -9,7 +9,7 @@
 
                 <div class = "containerLeft">
 
-                    <?php //var_dump($data);
+                    <?php var_dump($_SESSION);
                     foreach($data as $cif) {
                         $eval = $cif['average'];
                         $title = $cif['catTitre'];
