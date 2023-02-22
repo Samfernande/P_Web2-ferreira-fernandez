@@ -13,13 +13,13 @@ class ControllerCheck extends Controller
         $this->view = new View();
         $this->view->render('checkLogin.php', $this->data);
         $this->user = new ModelUser();
-        $this->GetLogin();
-        $this->register();
+        //$this->GetLogin();
+        //$this->register();
 
 
     }
 
-    private function GetLogin() 
+    /*private function GetLogin() 
     {
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
@@ -44,7 +44,7 @@ class ControllerCheck extends Controller
 
 
         }
-    }
+    }*/
 
     private function register() {
         $username = $_POST['userRegister'] ?? '';

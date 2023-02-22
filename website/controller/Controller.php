@@ -29,7 +29,6 @@ class Controller {
                     break;
                 case 'login':
                     $this->actualController = new ControllerLogin();
-                 
                     break;
                 case 'checkLogin':
                         $this->actualController = new ControllerCheck();

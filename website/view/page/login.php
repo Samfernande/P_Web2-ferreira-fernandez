@@ -3,7 +3,7 @@
     <div class= 'containerMiddleColumns'>
         <h1 class='colorDarkBlue'>Connexion</h1>
         
-        <form class='backgroundSky' method='POST' action='?link=checkLogin'>
+        <form class='backgroundSky' method='POST' action='?link=login'>
             
             <label for="username" class = 'textSmall colorDarkBlue'>Pseudo</label><br>
             <input type="text" id="username" name="username" required><br><br>
@@ -21,7 +21,7 @@
     <div class= 'containerMiddleColumns'>
         <h1 class='colorDarkBlue'>Pas encore inscrit ?</h1>
         
-        <form class='backgroundSky' method='POST' action='?link=checkLogin'>
+        <form class='backgroundSky' method='POST' action='?link=login'>
             
             <label for="userRegister" class = 'textSmall'>Pseudo</label><br>
             <input type="text" id="userRegister" name="userRegister" required><br><br>
