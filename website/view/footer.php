@@ -23,7 +23,7 @@
 
         <?php } else {?>
         <li class = "colorWhite animationLink textSmall littleSideMarge">
-        <a href="?connection=false" class = "textDropDownSmall colorWhite">Deconnexion</a>
+        <a href="?connexion=false" class = "textDropDownSmall colorWhite">Deconnexion</a>
         <?php }?>
         
     </ul>
