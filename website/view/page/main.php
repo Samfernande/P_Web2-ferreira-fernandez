@@ -9,13 +9,45 @@
 
                 <div class = "containerLeft">
 
-                    <?php 
-                    echo $data; 
-                    var_dump($_SESSION);
-                    ?>
+                    <?php //var_dump($data);
+                    foreach($data as $cif) {
+                        $eval = $cif['average'];
+                        $title = $cif['catTitre'];
+                        $name = $cif['cifTitre'];
+                        $username = $cif['utiPseudo'];
+                        $fullStars = floor($eval);
+
+                        if ($eval - $fullStars >= 0.5) {
+                            $halfStars = 1;
+                        } else {
+                            $halfStars = 0;
+                        }
+
+                        $emptyStars = 5 - $fullStars - $halfStars; ?>
+                    <h1 class = 'noMarge'><?php echo $title ?></h1>
+                    <div class = 'backgroundSky borderRound containerLeft'>
+                        <div class = 't'>
+                            <p class = 'noMarge colorDarkBlue textSmall textLeft'><?php echo $name ?></p>
+                        </div>
+                        <p class = 'noMarge colorDarkBlue textSmall2'><?php echo $username ?></p>
+                    </div>
+                    <div class = 'containerMiddle'>
+                        <?php 
+                        for ($i = 0; $i < $fullStars; $i++) {
+                            echo "<p class = 'noMarge'><span class='star'>★</span></p>";
+                        }
+                        if ($halfStars) {
+                            echo "<p class = 'noMarge'><span class='star'>☆</span></p>";
+                        }
+                        for ($i = 0; $i < $emptyStars; $i++) {
+                            echo"<p class = 'noMarge'><span class='star'>☆</span></p>";
+                        }
+                        ?>
+                    </div>
+                    <?php } ?>
+
 
                 </div>
-    
             </div>
 
     </div>
