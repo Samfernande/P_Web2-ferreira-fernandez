@@ -3,6 +3,8 @@
 include_once "ControllerLogin.php";
 include_once "ControllerMain.php";
 include_once "ControllerCheck.php";
+include_once "ControllerCifs.php";
+include_once "ControllerAdd.php";
 
 // Classe controller permettant d'intéragir avec les modèles et ajouter les données dans view
 
@@ -34,10 +36,10 @@ class Controller {
                         $this->actualController = new ControllerCheck();
                         break;
                 case 'allCIF':
-                    $this->actualController = new ControllerLogin();
+                    $this->actualController = new ControllerCifs();
                     break;
                 case 'addCIF':
-                    $this->actualController = new ControllerLogin();
+                    $this->actualController = new ControllerAdd();
                     break;
                 default:
                     $this->actualController = new ControllerMain();

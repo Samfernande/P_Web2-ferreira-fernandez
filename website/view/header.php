@@ -17,7 +17,14 @@
                         <button onclick="myFunction()" class="dropbtn textSmall">CIFS</button>
                         <div id="myDropdown" class="dropdown-content">
                             <a href="?link=allCIF" class = "textDropDownSmall colorWhite">Tous les CIFS</a>
-                            <a href="?link=addCIF" class = "textDropDownSmall colorWhite">Ajouter une CIF</a>
+                            
+                            <?php  if (!isset($_SESSION['isConnected'])){
+                                echo "<a href='?link=login'";
+                            } else { 
+                                echo "<a href='?link=addCIF'";
+                            }
+                            echo "class = 'textDropDownSmall colorWhite'>Ajouter une CIF</a>"; ?>
+
                         </div>
                     </div>
                 </li>
