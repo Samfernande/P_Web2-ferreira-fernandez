@@ -28,7 +28,6 @@ class ControllerLogin extends Controller
 
         if(!empty($username) || !empty($password)) 
         {
-
             foreach ($this->user->getUser() as $userKey)
             {
                 if (strtolower($userKey['utiPseudo']) == strtolower($username) && $userKey['utiMotDePasse'] == $hashedPassword)
@@ -39,6 +38,9 @@ class ControllerLogin extends Controller
                     header('Location: ?link=index');
                     $this->showSuccessLogin();
                     exit();
+                }
+                else {
+                    $_SESSION['incorrectLogin'] = true;
                 }
 
             }
@@ -57,6 +59,7 @@ class ControllerLogin extends Controller
             {
                 // Si oui, sort directement et doit tout refaire
                 if (strtolower($username) == strtolower($userKey['utiPseudo'])) {
+                    $_SESSION['sameUser'] = true;
                     header('Location: ?link=login');
                     exit();
                 }
