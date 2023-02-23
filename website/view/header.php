@@ -35,12 +35,12 @@
             
             <ul class = alignRight>
             
-            <?php  if (!isset($_SESSION['isConnected'])){ ?>
+            <?php if (!isset($_SESSION['isConnected'])){ ?>
             <li class = "colorWhite">
                 <a href="?link=login"> <img src= "/website/resources/img/login.png" alt = "login" class = "veryLittleImg animationLink"> </a>
             </li>
             <?php } else { ?>
-                
+
             <?php } ?>
             </ul>
 
