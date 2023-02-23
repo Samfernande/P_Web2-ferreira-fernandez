@@ -4,18 +4,24 @@ include_once "Controller.php";
 include_once "model/ModelCif.php";
 include_once "model/ModelUser.php";
 
-class ControllerMain extends Controller{
+
+class ControllerAdd extends Controller{
     private $cif;
 
     public function __construct() {
         $this->cif = new ModelCif();
         $this->view = new View();
 
-        $array = $this->cif->getLimitCif(5);
-        $this->view->render('main.php', $array);
+        $this->view->render('addCif.php', "");
     }
 
+    
+
+
+  
 }
+
+
 
 
 ?>
