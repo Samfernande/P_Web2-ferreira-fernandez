@@ -85,9 +85,23 @@
     background-color: #66A182;
 }
 /*PHOTOGRAPHIE*/
+.photographie {
+    background-color: #49111C;
+}
 /*SCIENCE*/
-/*FANTASY*/
+.science {
+    background-color: #1D84B5;
+}
 /*SPORT*/
+.sport {
+    background-color: #ADA296;
+}
 /*TECHNOLOGIE*/
+.technologie {
+    background-color: #CCA43B;
+}
 /*VOYAGE*/
+.voyage {
+    background-color: #FF928B;
+}
 
