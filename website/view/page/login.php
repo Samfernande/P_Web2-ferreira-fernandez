@@ -29,6 +29,9 @@
             <label for="passwordRegister" class = 'textSmall'>Mot de passe</label><br>
             <input type="password" id="passwordRegister" name="passwordRegister" required><br><br>
 
+            <label for="repeatPasswordRegister" class = 'textSmall'>Répéter mot de passe</label><br>
+            <input type="password" id="passwordRegister" name="repeatPasswordRegister" required><br><br>
+
             <input type="submit" value="Envoyer" class='buttonLogins'>
         </form>
     </div>
@@ -41,11 +44,17 @@
         <p>Identifiants incorrects ou n'existent pas !</p>
       </div>
 
-<?php } elseif (isset($_SESSION['sameUser']) && $_SESSION['sameUser']) { ?>
+<?php } elseif (isset($_SESSION['sameUser']) && $_SESSION['sameUser']) {  $_SESSION['sameUser'] = false;?>
 
 <div id="popup" class="popup">
         <p>Pseudo déjà utilisé !</p>
       </div>
+<?php } elseif (isset($_SESSION['notSamePassword']) && $_SESSION['notSamePassword']) { $_SESSION['notSamePassword'] = false;?>
+
+    <div id="popup" class="popup">
+        <p>Les mots de passe ne correspondent pas</p>
+      </div>
+
 <?php } ?>
 
 <script src='website/resources/js/successLogin.js'></script>

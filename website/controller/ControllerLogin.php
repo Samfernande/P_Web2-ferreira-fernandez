@@ -23,6 +23,7 @@ class ControllerLogin extends Controller
     {
         $username =  $_POST['username'] ?? '';
         $password =  $_POST['password'] ?? '';
+        $repeatPassword = $_POST['repeatPasswordRegister'] ?? '';
 
         $hashedPassword = sha1($password);
 
@@ -36,7 +37,6 @@ class ControllerLogin extends Controller
                     $_SESSION['idUtilisateur'] = $userKey['idUtilisateur'];
                     $_SESSION['showConnection'] = true;
                     header('Location: ?link=index');
-                    $this->showSuccessLogin();
                     exit();
                 }
                 else {
@@ -50,6 +50,7 @@ class ControllerLogin extends Controller
     private function register() {
         $username = $_POST['userRegister'] ?? '';
         $password = $_POST['passwordRegister'] ?? '';
+        $repeatPassword = $_POST['repeatPasswordRegister'] ?? '';
 
         // Si formulaire valide
         if(!empty($username) || !empty($password)) {
@@ -63,6 +64,13 @@ class ControllerLogin extends Controller
                     header('Location: ?link=login');
                     exit();
                 }
+            }
+
+            if($password != $repeatPassword)
+            {
+                $_SESSION['notSamePassword'] = true;
+                header('Location: ?link=login');
+                exit();
             }
 
             // Si pas le même nom, ajoute dans la db puis créé la session et attribue l'id utilisateur au pseudo donné puis redirige vers index
@@ -84,10 +92,6 @@ class ControllerLogin extends Controller
         }
     }
 
-    private function showSuccessLogin()
-    {
-
-    }
 }
 
 
