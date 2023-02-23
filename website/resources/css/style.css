@@ -34,7 +34,7 @@
   }
    
 .littleImg {
-    width: 100px;
+    width: 70px;
     margin: 0;
 }
 
@@ -55,5 +55,23 @@
 .card {
     border-radius: 15px;
     margin: 2% 25%;
-    box-shadow: 2px 2px 5px 1px black;
 }
+
+.selectCif {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  /* Style pour le bouton */
+  .buttonCif {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #253337;
+    color: #fff;
+    cursor: pointer;
+  }

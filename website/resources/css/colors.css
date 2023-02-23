@@ -35,7 +35,7 @@
 }
 
 .colorWhite{
-    color: #E0FCFC;
+    color: #ffffff;
 }
 
 /*COULEURS POUR LES CATEGORIES DES CIFS*/
@@ -73,7 +73,7 @@
     background-color: #FFB86F;
 }
 /*MODE*/
-.livre {
+.mode {
     background-color: #D1495B;
 }
 /*MUSIQUE*/
