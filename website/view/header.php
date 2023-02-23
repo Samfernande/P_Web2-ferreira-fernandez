@@ -40,7 +40,7 @@
                 <a href="?link=login"> <img src= "/website/resources/img/login.png" alt = "login" class = "veryLittleImg animationLink"> </a>
             </li>
             <?php } else { ?>
-
+                <a href="?connection=false"> <img src= "/website/resources/img/deconnect.png" alt = "login" class = "veryLittleImg animationLink"> </a>
             <?php } ?>
             </ul>
 
