@@ -105,3 +105,19 @@
     background-color: #FF928B;
 }
 
+/* Définition de la classe */
+.hover-yellow {
+    background-position: 100%;
+    color: black;
+    
+  }
+  
+  /* Définition de l'effet au survol */
+  .hover-yellow:hover {
+    background: linear-gradient(to right, yellow 50%, black 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  

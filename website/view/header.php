@@ -1,6 +1,6 @@
 <header class = "backgroundDarkBlue noMarge">
 
-        <div class = "containerSpaceEvenly noMarge">
+        <div class = "containerSpaceBetween noMarge">
 
             <ul class = alignLeft>
 
