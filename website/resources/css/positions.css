@@ -35,6 +35,31 @@
     justify-content: center;
 }
 
+/*Container dans lequel les objets enfants serotn alignés verticalement mais centrés au milieu de la page*/
+.containerMiddleColumns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.containerLeftColumns {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+}
+
+.containerRightColumns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    
+}
+
 /*Classe qui aligne les objets enfants à gauche et donne une marge à droite*/
 
 .alignLeft {
@@ -124,13 +149,6 @@
     text-align: left;
 }
 
-/*Container dans lequel les objets enfants serotn alignés verticalement mais centrés au milieu de la page*/
-.containerMiddleColumns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-}
+
 
 

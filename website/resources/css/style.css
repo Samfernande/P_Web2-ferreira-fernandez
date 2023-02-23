@@ -49,3 +49,11 @@
     width: 40%;
     margin: 0;
 }
+
+/* CARDS */
+
+.card {
+    border-radius: 15px;
+    margin: 3%;
+    box-shadow: 2px 2px 5px 1px black;
+}
