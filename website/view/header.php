@@ -4,9 +4,11 @@
 
             <ul class = alignLeft>
 
+           
                 <li class = "colorWhite">
                 <a href="?link=index"> <img src= "/website/resources/img/logo.png" alt = "logo" class = "littleImg animationLink"> </a>
                 </li>
+          
 
                 <li class = "colorWhite animationLink sideMarge">
                     <a href="?link=index" class = "textSmall colorWhite"> Accueil</a>
@@ -32,11 +34,12 @@
             </ul>
             
             <ul class = alignRight>
-
+            
+            <?php  if (!isset($_SESSION['isConnected'])){ ?>
             <li class = "colorWhite">
                 <a href="?link=login"> <img src= "/website/resources/img/login.png" alt = "login" class = "veryLittleImg animationLink"> </a>
             </li>
-
+            <?php } ?>
             </ul>
 
         </div>
