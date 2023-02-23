@@ -37,3 +37,57 @@
 .colorWhite{
     color: #E0FCFC;
 }
+
+/*COULEURS POUR LES CATEGORIES DES CIFS*/
+
+/*ART*/
+.art{
+    background-color: #8367C7;
+}
+/*CINEMA*/
+.cinema {
+    background-color: #45062E;
+}
+/*CULTURE*/
+.culture {
+    background-color: #92140C;
+}
+/*FANTASY*/
+.culture {
+    background-color: #92140C;
+}
+/*RESTAURANT*/
+.restaurant {
+    background-color: #493657;
+}
+/*HISTOIRE*/
+.histoire {
+    background-color: #362023;
+}
+/*HUMANITAIRE*/
+.humanitaire {
+    background-color: #2A6041;
+}
+/*LIVRE*/
+.livre {
+    background-color: #FFB86F;
+}
+/*MODE*/
+.livre {
+    background-color: #D1495B;
+}
+/*MUSIQUE*/
+.musique {
+    background-color: #4C2B36;
+}
+/*NATURE*/
+.nature {
+    background-color: #66A182;
+}
+/*PHOTOGRAPHIE*/
+/*SCIENCE*/
+/*FANTASY*/
+/*SPORT*/
+/*TECHNOLOGIE*/
+/*VOYAGE*/
+
