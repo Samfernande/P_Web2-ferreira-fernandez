@@ -101,9 +101,9 @@ input[type="text"], input[type="password"] {
   bottom: 20px;
   right: 20px;
   background-color: #f2f2f2;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px #888888;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #000000;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }

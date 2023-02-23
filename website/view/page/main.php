@@ -69,3 +69,20 @@
 
 </div>
 
+<?php
+
+if(isset($_SESSION['showConnection']) && $_SESSION['showConnection'])
+{
+    $_SESSION['showConnection'] = false;
+?>
+
+<div id="popup" class="popup">
+        <p>Connexion réussie !</p>
+      </div>
+
+<?php
+}
+?>
+
+<script src='website/resources/js/successLogin.js'></script>
+

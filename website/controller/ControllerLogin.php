@@ -33,6 +33,7 @@ class ControllerLogin extends Controller
                 {
                     $_SESSION['isConnected'] = 1;
                     $_SESSION['idUtilisateur'] = $userKey['idUtilisateur'];
+                    $_SESSION['showConnection'] = true;
                     header('Location: ?link=index');
                     $this->showSuccessLogin();
                     exit();
@@ -67,12 +68,12 @@ class ControllerLogin extends Controller
                 {
                     if (strtolower($username) == strtolower($userKey['utiPseudo'])){
                         $_SESSION['idUtilisateur'] = $userKey['idUtilisateur'];
+                        $_SESSION['showConnection'] = true;
                         break;
                     }
                 }
             }
 
-            $this->showSuccessLogin();
             header('Location: ?link=index');
             exit();
 
