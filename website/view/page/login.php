@@ -33,3 +33,19 @@
         </form>
     </div>
 </div>
+
+<?php if(isset($_SESSION['incorrectLogin']) && $_SESSION['incorrectLogin']) {
+    $_SESSION['incorrectLogin'] = false; ?>
+
+<div id="popup" class="popup">
+        <p>Identifiants incorrects ou n'existent pas !</p>
+      </div>
+
+<?php } elseif (isset($_SESSION['sameUser']) && $_SESSION['sameUser']) { ?>
+
+<div id="popup" class="popup">
+        <p>Pseudo déjà utilisé !</p>
+      </div>
+<?php } ?>
+
+<script src='website/resources/js/successLogin.js'></script>
