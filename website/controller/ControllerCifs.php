@@ -15,11 +15,7 @@ class ControllerCifs extends Controller{
         $array = $this->cif->getAllCifs();
         $this->view->render('cifs.php', $array);
     }
-
     
-
-
-  
 }
 
 ?>
