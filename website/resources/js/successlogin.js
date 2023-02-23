@@ -8,7 +8,7 @@ function showPopup() {
   // Disparition de la popup après 5 secondes
   setTimeout(function() {
     popup.classList.remove('show');
-  }, 5000);
+  }, 2000);
 }
 
 // Appel de la fonction showPopup() lors de la réussite de la connexion

@@ -2,7 +2,6 @@
 
 include_once "ControllerLogin.php";
 include_once "ControllerMain.php";
-include_once "ControllerCheck.php";
 include_once "ControllerCifs.php";
 include_once "ControllerAdd.php";
 
@@ -12,9 +11,10 @@ class Controller {
 
     protected $view;
     private $actualController;
+    private $connection;
     
     public function __construct() {
-
+        $this->disconnect();
     }
 
     public function CreateController() 
@@ -32,9 +32,6 @@ class Controller {
                 case 'login':
                     $this->actualController = new ControllerLogin();
                     break;
-                case 'checkLogin':
-                        $this->actualController = new ControllerCheck();
-                        break;
                 case 'allCIF':
                     $this->actualController = new ControllerCifs();
                     break;
@@ -51,6 +48,21 @@ class Controller {
         {
             $this->actualController = new ControllerMain();
         }
+    }
+
+    public function disconnect()
+    {
+        if (isset($_GET['connection']))
+        {
+            $this->connection = $_GET['connection'] ?? '';
+            
+            if($this->connection == 'false')
+            {
+                $_SESSION = [];
+            }
+        }
+
+        
     }
 
 }

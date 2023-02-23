@@ -9,7 +9,7 @@
 
                 <div class = "containerLeft">
 
-                    <?php var_dump($_SESSION);
+                    <?php
                     foreach($data as $cif) {
                         $eval = $cif['average'];
                         $title = $cif['catTitre'];
@@ -85,4 +85,3 @@ if(isset($_SESSION['showConnection']) && $_SESSION['showConnection'])
 ?>
 
 <script src='website/resources/js/successLogin.js'></script>
-

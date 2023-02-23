@@ -3,6 +3,7 @@
 include_once "Controller.php";
 include_once "model/ModelCif.php";
 include_once "model/ModelUser.php";
+include_once "view/view.php";
 
 class ControllerMain extends Controller{
     private $cif;

@@ -1,7 +1,5 @@
 <div class='backgroundLightBlue bigPadding containerSpaceEvenly'>
 
-<?php var_dump($_SESSION);?>
-
     <div class= 'containerMiddleColumns'>
         <h1 class='colorDarkBlue'>Connexion</h1>
         
