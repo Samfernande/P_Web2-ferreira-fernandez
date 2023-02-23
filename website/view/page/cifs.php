@@ -1,11 +1,15 @@
 <div class = 'backgroundLightBlue littlePadding'>
 
-<?php foreach ($data as $cif) { 
+<?php
+
+    foreach ($data as $cif) { 
         $eval = $cif['average'];
         $title = $cif['catTitre'];
         $name = $cif['cifTitre'];
         $username = $cif['utiPseudo'];
         $fullStars = floor($eval);
+
+        $imgName = 'website/resources/img/imgCategory/' . strtr(strtolower($title),"é", "e" ) . '.png';
 
         if ($eval - $fullStars >= 0.5) {
             $halfStars = 1;
@@ -13,7 +17,10 @@
             $halfStars = 0;
         }
 
-        $emptyStars = 5 - $fullStars - $halfStars; ?>
+        $emptyStars = 5 - $fullStars - $halfStars;
+
+
+?>
 
     <div class ='card backgroundDarkBlue'>
         <div class='containerSpaceBetween '>
@@ -22,7 +29,7 @@
         </div>
 
         <div class='containerRightColumns littleSideMarge'>
-            <p class='colorWhite'>IMAGE</p>
+            <p class='colorWhite'><img class='littleImg' src= <?php echo $imgName ?>></p>
         </div>
         
         <div class='containerSpaceBetween '>
