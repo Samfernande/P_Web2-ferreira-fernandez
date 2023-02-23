@@ -127,7 +127,7 @@ CREATE TABLE `t_utilisateur` (
 --
 
 INSERT INTO `t_utilisateur` (`idUtilisateur`, `utiPseudo`, `utiMotDePasse`, `utiDateEntree`) VALUES
-(1, 'Michel23', 'Michel23', '2023-02-01'),
+(1, 'Michel23', 'a6c4ba02f26fe311ae442ddfcd2287a27da879ef', '2023-02-01'),
 (2, 'HenryDes', 'HenryDes', '2023-02-03'),
 (3, 'Joaau', 'joaau', '2023-01-13'),
 (4, 'Sammuel', 'Sammuel', '2023-01-10');
