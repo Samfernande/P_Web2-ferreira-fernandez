@@ -5,14 +5,14 @@ include_once "model/ModelUser.php";
 
 class ControllerLogin extends Controller
 {
-    private $user;
+    private $model;
     private $data;
     private $checkConnection;
 
 
     public function __construct() {
         $this->view = new View();
-        $this->user = new ModelUser();
+        $this->model = new ModelUser();
         $this->getLogin();
         $this->register();
         $this->view->render('login.php', "");
@@ -29,7 +29,7 @@ class ControllerLogin extends Controller
 
         if(!empty($username) || !empty($password)) 
         {
-            foreach ($this->user->getUser() as $userKey)
+            foreach ($this->model->getUser() as $userKey)
             {
                 if (strtolower($userKey['utiPseudo']) == strtolower($username) && $userKey['utiMotDePasse'] == $hashedPassword)
                 {
@@ -56,7 +56,7 @@ class ControllerLogin extends Controller
         if(!empty($username) || !empty($password)) {
 
             // Cherche dans les utilisateurs si le nom donné correspond
-            foreach ($this->user->getUser() as $userKey) 
+            foreach ($this->model->getUser() as $userKey) 
             {
                 // Si oui, sort directement et doit tout refaire
                 if (strtolower($username) == strtolower($userKey['utiPseudo'])) {
@@ -74,10 +74,10 @@ class ControllerLogin extends Controller
             }
 
             // Si pas le même nom, ajoute dans la db puis créé la session et attribue l'id utilisateur au pseudo donné puis redirige vers index
-            $this->user->addUser($username, $password);
+            $this->model->addUser($username, $password);
             $_SESSION['isConnected'] = 1;
 
-            foreach ($this->user->getUser() as $userKey)
+            foreach ($this->model->getUser() as $userKey)
             {
                 if (strtolower($username) == strtolower($userKey['utiPseudo'])){
                     $_SESSION['idUtilisateur'] = $userKey['idUtilisateur'];

@@ -9,6 +9,7 @@ header {
     top: 0;
     width: 100%;
     box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 /*Permet d'agrandir le footer et qu'il soit collé au bas de la page*/

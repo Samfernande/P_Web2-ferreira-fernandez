@@ -151,7 +151,7 @@
 
 
   /* Style pour le formulaire */
-  form {
+  .formSearch {
     display: flex;
     flex-direction: row;
     justify-content: center;
