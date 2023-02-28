@@ -5,6 +5,14 @@
     padding:0 2%;
 }
 
+.containerHorizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* aligne les éléments sur l'axe vertical */
+    justify-content: center; /* aligne les éléments sur l'axe horizontal */
+  }
+  
+
 /*Container dans lequel les objets enfants seront en colonne mais alignés à gauche*/
 .containerLeft {
     display: flex;

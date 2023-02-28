@@ -24,13 +24,13 @@
         <form class='backgroundSky' method='POST' action='?link=login'>
             
             <label for="userRegister" class = 'textSmall'>Pseudo</label><br>
-            <input type="text" id="userRegister" name="userRegister" required><br><br>
+            <input type="text" id="userRegister" name="userRegister" maxlength="25" required><br><br>
 
             <label for="passwordRegister" class = 'textSmall'>Mot de passe</label><br>
-            <input type="password" id="passwordRegister" name="passwordRegister" required><br><br>
+            <input type="password" id="passwordRegister" name="passwordRegister" required maxlength="25"><br><br>
 
             <label for="repeatPasswordRegister" class = 'textSmall'>Répéter mot de passe</label><br>
-            <input type="password" id="passwordRegister" name="repeatPasswordRegister" required><br><br>
+            <input type="password" id="passwordRegister" name="repeatPasswordRegister" required maxlength="25"><br><br>
 
             <input type="submit" value="Envoyer" class='buttonLogins'>
         </form>

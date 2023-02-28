@@ -127,7 +127,7 @@ DESCRIPTION : View qui contient la totalité des CIFs, ainsi qu'un système de t
 
                 <a href='?link=detailCIF&idCif=<?php echo $cif['idCif'] ?>' class='textSmall2'>
 
-                    <div class='containerSpaceBetween '>
+                    <div class='containerSpaceBetween backgroundDarkBlue borderRound'>
 
                         <h1 class='colorWhite'><?php echo $name ?></h1>
                         <p class='colorWhite'><?php echo $title ?></p>

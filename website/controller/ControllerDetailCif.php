@@ -12,7 +12,18 @@ class ControllerDetailCif extends Controller
 
     public function __construct() {
         $this->view = new View();
-        $this->view->render('detailCif.php', "");
+        $this->model['modelCif'] = new ModelCif();
+        $this->data = $this->getCif();
+        $this->view->render('detailCif.php', $this->data);
+
+    }
+
+
+    function getCif()
+    {
+        $idCif = $_GET['idCif'];
+
+        return $this->model['modelCif']->getCifByID($idCif);
 
     }
 
