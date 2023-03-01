@@ -6,11 +6,15 @@
         </h1>
 
             <div class = "containerMiddleColumns bigWidth noPadding">
-
+            
                 <div class = "containerLeft">
 
                     <?php
-                    foreach($data as $cif) {
+                    foreach($data as $cif) { ?>
+
+                   
+
+                    <?php
                         $eval = $cif['average'];
                         $title = $cif['catTitre'];
                         $name = $cif['cifTitre'];
@@ -25,12 +29,14 @@
 
                         $emptyStars = 5 - $fullStars - $halfStars; ?>
                     <h1 class = 'noMarge'><?php echo $title ?></h1>
+                    <a href='?link=detailCIF&idCif=<?php echo $cif['idCif'] ?>' class='textSmall2'>
                     <div class = 'backgroundSky borderRound containerLeft'>
                         <div class = 't'>
                             <p class = 'noMarge colorDarkBlue textSmall textLeft'><?php echo $name ?></p>
                         </div>
                         <p class = 'noMarge colorDarkBlue textSmall2'><?php echo $username ?></p>
                     </div>
+                    </a>
                     <div class = 'containerMiddle'>
                         <?php 
                         for ($i = 0; $i < $fullStars; $i++) {

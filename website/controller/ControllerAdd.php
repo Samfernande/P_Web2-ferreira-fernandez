@@ -10,16 +10,54 @@ class ControllerAdd extends Controller{
     private $data;
 
     public function __construct() {
-        $this->model = new modelCif();
+        $this->model['category'] = new ModelCategory();
+        $this->model['cif'] = new ModelCif();
         $this->view = new View();
 
-        $this->view->render('addCif.php', "");
+
+        $this->data['category'] = $this->model['category']->getCategories();
+
+        $this->data['cif'] = $this->getForm();
+
+        $this->view->render('addCif.php', $this->data);
+    }
+    
+    private function getForm() {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            
+            $category = $_POST['category'] ?? "";
+            $title = $_POST['title'] ?? "";
+            $description = $_POST['description'] ?? "";
+
+            $user = $_SESSION['idUtilisateur'];
+
+            $allCategories = $this->model['category']->getCategories();
+
+            $date = date('y-m-d');
+
+            foreach ($allCategories as $cat) {
+                if ($category == $cat['catTitre']) {
+                    $idCategory = $cat['idCategorie'];
+                }
+            }
+
+
+            $data = array(
+                'cifTitre' => $title,
+                'cifDescription' => $description,
+                'cifDate' => $date,
+                'fkUtilisateur' => $user,
+                'fkCategorie' => $idCategory
+            ); 
+
+            $this->model['cif']->addCif($data);
+            header('Location: ?link=main');
+            die();
+            
+        }
+
     }
 
-    
-
-
-  
 }
 
 
