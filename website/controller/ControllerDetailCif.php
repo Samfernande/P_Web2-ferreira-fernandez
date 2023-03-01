@@ -14,8 +14,8 @@ class ControllerDetailCif extends Controller
         $this->view = new View();
         $this->model['modelCif'] = new ModelCif();
         $this->data = $this->getCif();
+        $this->getEval();
         $this->view->render('detailCif.php', $this->data);
-
     }
 
 
@@ -24,6 +24,16 @@ class ControllerDetailCif extends Controller
         $idCif = $_GET['idCif'];
 
         return $this->model['modelCif']->getCifByID($idCif);
+    }
+
+    function getEval()
+    {
+        if (isset($_POST['rating'])) {
+            $rating = $_POST['rating'];
+            header('Location: /website?link=detailCIF&idCif=1');
+            var_dump($rating);
+        }
+
 
     }
 

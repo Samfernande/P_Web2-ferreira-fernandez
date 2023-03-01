@@ -76,3 +76,31 @@
     color: #fff;
     cursor: pointer;
   }
+
+  .ratingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .starRating {
+    display: inline-block;
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+.starRating:hover {
+    color: #ffe234;
+  }
+  
+  .starRating.rated {
+    color: #ffe234;
+  }
+  
+  
+
+  
+  
+  

@@ -121,26 +121,3 @@ input[type="text"], input[type="password"] {
   transform: scale(1.05) rotate(5deg);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 }
-
-.starRating {
-  display: inline-block;
-  transform: scaleX(-1);
-}
-
-.starRating input {
-  display: none;
-}
-
-.starRating label {
-  font-size: 30px;
-  color: #ffe234;
-  cursor: pointer;
-}
-
-.starRating label:before {
-  content: "\2606";
-}
-
-.starRating input:checked ~ label:before {
-  content: "\2605";
-}
