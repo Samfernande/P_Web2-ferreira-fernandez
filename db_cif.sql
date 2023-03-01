@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : jeu. 09 fév. 2023 à 12:37
+-- Généré le : mer. 01 mars 2023 à 14:38
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.0.19
 
@@ -45,7 +45,6 @@ INSERT INTO `t_categorie` (`idCategorie`, `catTitre`) VALUES
 (12, 'Cinéma'),
 (6, 'Culture'),
 (16, 'Fantasy'),
-(8, 'Restaurant'),
 (13, 'Histoire'),
 (10, 'Humanitaire'),
 (1, 'Livre'),
@@ -53,6 +52,7 @@ INSERT INTO `t_categorie` (`idCategorie`, `catTitre`) VALUES
 (14, 'Musique'),
 (4, 'Nature'),
 (7, 'Photographie'),
+(8, 'Restaurant'),
 (9, 'Science'),
 (15, 'Science-fiction'),
 (2, 'Sport'),
@@ -83,7 +83,10 @@ INSERT INTO `t_cif` (`idCif`, `cifTitre`, `cifDescription`, `cifDate`, `fkUtilis
 (2, 'J\'aime la littérature', 'Bonsoir, Sammuel, 91 ans, j\'adore la littérature.', '2023-02-02', 4, 1),
 (3, 'A L\'AIDE', 'A l\'AIDE, J\'AI TROP DE SWAG', '2023-02-09', 2, 10),
 (4, 'J\'adore la vuie (bis)', 'Je suis joaau, et vraiment, vraiment, j\'adore ça', '2023-02-08', 3, 7),
-(5, 'Cherche femme 22 ans', 'Les femme de 22 ans, c\'est mon CIF ! :D', '2023-02-02', 2, 8);
+(5, 'Cherche femme 22 ans', 'Les femme de 22 ans, c\'est mon CIF ! :D', '2023-02-02', 2, 8),
+(6, 'culture', 'culture', '2023-03-01', 5, 6),
+(7, 'EO', 'Le monde est un endroit très mystérieux vu à travers les yeux d\'un animal. EO, un âne gris aux yeux mélancoliques, rencontre des bons et des méchants au cours de son long voyage dans la vie, connaît la joie et la douleur, endure la roue de la Fortune.', '2023-03-01', 5, 12),
+(8, 'Don de 1.50 CHF à un clochard', 'J\'étais à lausanne l\'autre jour, et j\'ai vu un petit clochard qui crevait de froid, je lui ai donné ce que j\'avais dans ma poche (1.50.-) et il était trop content, mon ego a explosé', '2023-03-01', 5, 10);
 
 -- --------------------------------------------------------
 
@@ -96,7 +99,7 @@ CREATE TABLE `t_evaluation` (
   `evaNote` decimal(3,1) NOT NULL,
   `fkUtilisateur` int UNSIGNED NOT NULL,
   `fkCif` int UNSIGNED NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `t_evaluation`
@@ -181,37 +184,19 @@ ALTER TABLE `t_categorie`
 -- AUTO_INCREMENT pour la table `t_cif`
 --
 ALTER TABLE `t_cif`
-  MODIFY `idCif` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idCif` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `t_evaluation`
 --
 ALTER TABLE `t_evaluation`
-  MODIFY `idEvaluation` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idEvaluation` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `t_utilisateur`
 --
 ALTER TABLE `t_utilisateur`
   MODIFY `idUtilisateur` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `t_cif`
---
-ALTER TABLE `t_cif`
-  ADD CONSTRAINT `fk_idCategorie_cif` FOREIGN KEY (`fkCategorie`) REFERENCES `t_categorie` (`idCategorie`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_idUtilisateur_cif` FOREIGN KEY (`fkUtilisateur`) REFERENCES `t_utilisateur` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `t_evaluation`
---
-ALTER TABLE `t_evaluation`
-  ADD CONSTRAINT `fk_idCif` FOREIGN KEY (`fkCif`) REFERENCES `t_cif` (`idCif`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_idUtilisateur_eval` FOREIGN KEY (`fkUtilisateur`) REFERENCES `t_utilisateur` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
