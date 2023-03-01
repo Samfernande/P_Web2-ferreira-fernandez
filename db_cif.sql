@@ -45,7 +45,7 @@ INSERT INTO `t_categorie` (`idCategorie`, `catTitre`) VALUES
 (12, 'Cinéma'),
 (6, 'Culture'),
 (16, 'Fantasy'),
-(8, 'Gastronomie'),
+(8, 'Restaurant'),
 (13, 'Histoire'),
 (10, 'Humanitaire'),
 (1, 'Livre'),
