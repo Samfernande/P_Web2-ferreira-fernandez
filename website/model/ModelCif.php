@@ -3,18 +3,6 @@
 include_once "model.php";
 
 class ModelCif extends Model{
-    public function addCif($cifTitle, $cifDescription, $user, $categorie){
-        $date = date('y-m-d');
-
-        $stmt = $this->connector->prepare("INSERT INTO db_cif.t_cif (cifTitre, cifDescription, cifDate, fkUtilisateur, fkCategorie) VALUES (:cifTitre, :cifDescription, :cifDate, :fkUtilisateur, :fkCategorie)");
-
-        $stmt->bindParam(':cifTitre', $cifTitle);
-        $stmt->bindParam(':cifDescription', $cifDescription);
-        $stmt->bindParam(':cifDate', $date);
-        $stmt->bindParam(':fkUtilisateur', $user);
-        $stmt->bindParam(':fkCategorie', $categorie);
-        $stmt->execute();
-    } 
 
     public function getLimitCif($number) {
         $stmt = $this->connector->prepare(
@@ -28,7 +16,9 @@ class ModelCif extends Model{
         LIMIT $number;");
 
         $stmt->execute();
-        return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     public function getAllCifs() {
@@ -42,7 +32,8 @@ class ModelCif extends Model{
         ORDER BY cifDate DESC;");
         
         $stmt->execute();
-        return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     // Récupère les CIFs triés selon des options
@@ -65,7 +56,8 @@ class ModelCif extends Model{
             cifDate DESC;");
 
         $stmt->execute();
-        return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     public function getCifByID($idCif) {
@@ -80,6 +72,20 @@ class ModelCif extends Model{
         ORDER BY cifDate DESC;");
         
         $stmt->execute();
-        return $results = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        return $results;
     }
+    
+    public function addCif($data) {
+        $fields = implode(',', array_keys($data));
+        $params = implode(',', array_fill(0, count($data), '?'));
+
+        $query = "INSERT INTO db_cif.t_cif ($fields) VALUES ($params)";
+        
+        $req = $this->connector->prepare($query);
+
+        $req->execute(array_values($data));
+
+        return $req;
+    } 
 }

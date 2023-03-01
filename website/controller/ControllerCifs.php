@@ -13,9 +13,12 @@ class ControllerCifs extends Controller{
     public function __construct() {
         $this->model['cif'] = new ModelCif();
         $this->model['category'] = new ModelCategory();
+
         $this->view = new View();
+
         $this->data['cif'] = $this->generateCIFs();
         $this->data['category'] = $this->model['category']->getCategories();
+        
         $this->view->render('cifs.php', $this->data);
     }
 
