@@ -5,6 +5,7 @@ include_once "ControllerMain.php";
 include_once "ControllerCifs.php";
 include_once "ControllerAdd.php";
 include_once "ControllerDetailCif.php";
+include_once "ControllerUserProfile.php";
 
 // Classe controller permettant d'intéragir avec les modèles et ajouter les données dans view
 
@@ -42,6 +43,9 @@ class Controller {
                 case 'detailCIF':
                     $this->actualController = new ControllerDetailCif();
                     break;
+                case 'userProfile':
+                    $this->actualController = new ControllerUserProfile();
+                    break;
                 default:
                     $this->actualController = new ControllerMain();
                     break;
@@ -54,6 +58,8 @@ class Controller {
         }
     }
 
+
+    // Méthode qui vide la Session, pour se déconnecter du compte
     public function disconnect()
     {
         if (isset($_GET['connection']))
