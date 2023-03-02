@@ -19,7 +19,7 @@ DESCRIPTION : View qui contient la totalité des CIFs, ainsi qu'un système de t
 
 <!--=========================SYSTÈME DE TRI DES CIFs=========================-->
 
-    <form class='formSearch' method='post' action='?link=allCIF'>
+    <form class='formSearch formLogin' method='post' action='?link=allCIF'>
         <div class='containerColumnMiddle'>
             <div class='containerSpaceEvenly'>
                 <div>

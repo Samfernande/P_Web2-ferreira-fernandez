@@ -15,7 +15,8 @@ class ControllerDetailCif extends Controller
         $this->view = new View();
         $this->model['modelCif'] = new ModelCif();
         $this->model['modelEvaluation'] = new ModelEvaluation();
-        $this->data = $this->getCif();
+        $this->data['cif'] = $this->getCif();
+        $this->data['evaluation'] = $this->model['modelEvaluation']->getEvaluation();
         $this->getEval();
         $this->view->render('detailCif.php', $this->data);
     }
@@ -36,7 +37,8 @@ class ControllerDetailCif extends Controller
 
             $this->model['modelEvaluation']->addEvaluation($_SESSION['idUtilisateur'], $_GET['idCif'], $rating);
 
-            var_dump($rating);
+            header("Location: #");
+            exit();
         }
     }
 
