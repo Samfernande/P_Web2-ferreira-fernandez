@@ -81,4 +81,10 @@ $date = date('d-m-Y');
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     <script src="website/resources/js/rating.js"></script>
 
+    <?php if (isset($data['msgNoConnection']) && $data['msgNoConnection'] == true) { ?>
+    <div id="popup" class="popup">
+        <p>Vous devez être connecté pour évaluer !</p>
+    </div>
+    <script src='website/resources/js/successLogin.js'></script>
+    <?php } ?>
 </div>

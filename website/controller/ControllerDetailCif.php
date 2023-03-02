@@ -19,6 +19,7 @@ class ControllerDetailCif extends Controller
         $this->data['evaluation'] = $this->model['modelEvaluation']->getEvaluation();
         $this->getEval();
         $this->alreadyRated();
+
         $this->view->render('detailCif.php', $this->data);
     }
 
@@ -32,6 +33,7 @@ class ControllerDetailCif extends Controller
 
     function getEval()
     {
+        
         if(isset($_SESSION['idUtilisateur']))
         {
             if (isset($_POST['ratingInput'])) 
@@ -39,14 +41,20 @@ class ControllerDetailCif extends Controller
                 $rating = $_POST['ratingInput'];
 
                 $this->model['modelEvaluation']->addEvaluation($_SESSION['idUtilisateur'], $_GET['idCif'], $rating);
-
+                
+              
+                
                 header("Location: #");
                 exit();
+                
             }
         }
         else
         {
-            
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $this->data['msgNoConnection'] = true;   
+            }
+      
         }
     }
 
