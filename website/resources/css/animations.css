@@ -55,7 +55,7 @@
   display: block;
 }
 
-input[type="text"], input[type="password"] {
+.inputLogin {
   width: 100%;
   padding: 2%;
   margin-bottom: 2%;

@@ -6,10 +6,10 @@
         <form class='backgroundSky formLogin' method='POST' action='?link=login'>
             
             <label for="username" class = 'textSmall colorDarkBlue'>Pseudo</label><br>
-            <input type="text" id="username" name="username" required><br><br>
+            <input type="text" id="username" name="username" required class='inputLogin'><br><br>
 
             <label for="password" class = 'textSmall colorDarkBlue'>Mot de passe</label><br>
-            <input type="password" id="password" name="password" required><br><br>
+            <input type="password" id="password" name="password" required class='inputLogin'><br><br>
 
             <input type="submit" value="Envoyer" class='buttonLogins'>
         </form>
@@ -24,13 +24,13 @@
         <form class='backgroundSky formLogin' method='POST' action='?link=login'>
             
             <label for="userRegister" class = 'textSmall'>Pseudo</label><br>
-            <input type="text" id="userRegister" name="userRegister" maxlength="25" required><br><br>
+            <input type="text" id="userRegister" name="userRegister" maxlength="25" required class='inputLogin'><br><br>
 
             <label for="passwordRegister" class = 'textSmall'>Mot de passe</label><br>
-            <input type="password" id="passwordRegister" name="passwordRegister" required maxlength="25"><br><br>
+            <input type="password" id="passwordRegister" name="passwordRegister" required maxlength="25" class='inputLogin'><br><br>
 
             <label for="repeatPasswordRegister" class = 'textSmall'>Répéter mot de passe</label><br>
-            <input type="password" id="passwordRegister" name="repeatPasswordRegister" required maxlength="25"><br><br>
+            <input type="password" id="passwordRegister" name="repeatPasswordRegister" required maxlength="25" class='inputLogin'><br><br>
 
             <input type="submit" value="Envoyer" class='buttonLogins'>
         </form>
