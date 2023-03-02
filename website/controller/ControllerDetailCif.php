@@ -18,6 +18,7 @@ class ControllerDetailCif extends Controller
         $this->data['cif'] = $this->getCif();
         $this->data['evaluation'] = $this->model['modelEvaluation']->getEvaluation();
         $this->getEval();
+        $this->alreadyRated();
         $this->view->render('detailCif.php', $this->data);
     }
 
@@ -31,15 +32,46 @@ class ControllerDetailCif extends Controller
 
     function getEval()
     {
-        if (isset($_POST['ratingInput'])) 
+        if(isset($_SESSION['idUtilisateur']))
         {
-            $rating = $_POST['ratingInput'];
+            if (isset($_POST['ratingInput'])) 
+            {
+                $rating = $_POST['ratingInput'];
 
-            $this->model['modelEvaluation']->addEvaluation($_SESSION['idUtilisateur'], $_GET['idCif'], $rating);
+                $this->model['modelEvaluation']->addEvaluation($_SESSION['idUtilisateur'], $_GET['idCif'], $rating);
 
-            header("Location: #");
-            exit();
+                header("Location: #");
+                exit();
+            }
         }
+        else
+        {
+            
+        }
+    }
+
+    function alreadyRated()
+    {
+        if(isset($_SESSION['idUtilisateur']))
+        {
+            foreach ($this->data['evaluation'] as $eval)
+            {
+                if($_SESSION['idUtilisateur'] == $eval['fkUtilisateur'] && $eval['fkCif'] == $_GET['idCif'])
+                {
+                    $this->data['alreadyRated'] = true;
+                    break;
+                }
+                else
+                {
+                    $this->data['alreadyRated'] = false;
+                }
+            }
+        }
+        else
+        {
+            $this->data['alreadyRated'] = false;
+        }
+        
     }
 
     
