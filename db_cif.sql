@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : jeu. 02 mars 2023 à 08:26
+-- Généré le : jeu. 02 mars 2023 à 09:08
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.0.19
 
@@ -107,7 +107,14 @@ INSERT INTO `t_cif` (`idCif`, `cifTitre`, `cifDescription`, `cifDate`, `fkUtilis
 (47, 'Musée Olympique', 'Découvrez l\'histoire des Jeux Olympiques à travers une collection impressionnante d\'objets, d\'artefacts et de souvenirs dans un musée moderne et interactif.', '2023-03-02 09:21:06', 14, 6),
 (48, 'Croix-Rouge suisse', 'Une organisation humanitaire de premier plan en Suisse qui fournit une aide d\'urgence, des soins de santé et un soutien social aux personnes en situation de crise et de détresse.', '2023-03-02 09:21:16', 14, 10),
 (49, 'Ski à Verbier', 'Une station de ski de renommée mondiale offrant une grande variété de pistes pour tous les niveaux de compétence, ainsi que des vues spectaculaires sur les Alpes suisses.', '2023-03-02 09:21:49', 4, 2),
-(50, 'Montreux Jazz Festival', 'L\'un des plus grands festivals de jazz et de musique au monde, qui attire des artistes renommés du monde entier chaque année. Profitez d\'une expérience musicale inoubliable au bord du lac Léman.', '2023-03-02 09:22:06', 15, 14);
+(50, 'Montreux Jazz Festival', 'L\'un des plus grands festivals de jazz et de musique au monde, qui attire des artistes renommés du monde entier chaque année. Profitez d\'une expérience musicale inoubliable au bord du lac Léman.', '2023-03-02 09:22:06', 15, 14),
+(51, 'Les Misérables', 'Un classique de la littérature française qui raconte l\'histoire de Jean Valjean, un ancien bagnard qui cherche à se racheter dans une société qui le rejette. Un roman émouvant et poignant qui continue d\'inspirer les lecteurs aujourd\'hui.', '2023-03-02 08:01:37', 16, 1),
+(52, 'La Joconde', 'L\'un des tableaux les plus célèbres de l\'histoire de l\'art, peint par le maître italien de la Renaissance, Léonard de Vinci. La Joconde est une icône de la beauté et de la mystère, qui continue d\'attirer des millions de visiteurs chaque année au musée du Louvre à Paris.', '2023-03-02 09:02:25', 6, 3),
+(53, 'Yellowstone National Park', 'Un parc national emblématique des États-Unis, connu pour ses geysers, ses sources chaudes, ses cascades et sa faune abondante. Yellowstone est une merveille naturelle qui offre des vues à couper le souffle et des activités en plein air pour les amateurs de nature.', '2023-03-02 09:10:00', 17, 4),
+(54, 'Tesla Model S', 'Une voiture électrique de luxe qui a révolutionné l\'industrie automobile avec son design élégant, ses performances exceptionnelles et sa technologie de pointe. La Tesla Model S est un symbole de l\'innovation et de la durabilité dans le monde de l\'automobile.', '2023-03-02 08:04:22', 7, 11),
+(55, 'Le Parrain', 'Un chef-d\'œuvre du cinéma américain, réalisé par Francis Ford Coppola et mettant en vedette Marlon Brando, Al Pacino et James Caan. \"Le Parrain\" est un drame criminel épique qui explore les thèmes de la famille, de la loyauté et de la corruption.', '2023-03-01 10:04:50', 8, 12),
+(56, 'Le Seigneur des Anneaux', 'Une trilogie épique de fantasy écrite par J.R.R. Tolkien, qui suit la quête de Frodon Sacquet pour détruire l\'anneau unique et vaincre le seigneur des ténèbres, Sauron. \"Le Seigneur des Anneaux\" est un classique de la littérature fantasy qui a inspiré des générations de lecteurs et de fans de cinéma.', '2023-03-01 06:05:22', 9, 16),
+(57, 'World of Warcraft', 'J\'ai toujours été fasciné par les mondes fantastiques et les aventures épiques, et World of Warcraft est le meilleur jeu de rôle en ligne massivement multijoueur pour les amateurs de ce genre. Le monde créé dans le jeu est si riche et si immersif, que vous pouvez facilement vous perdre pendant des heures à explorer, combattre des ennemis et accomplir des quêtes. La communauté de joueurs est incroyablement dévouée, et l\'expérience de jeu est toujours en constante évolution grâce aux mises à jour régulières. Si vous cherchez un jeu qui vous transporte dans un monde magique et fantastique rempli d\'aventures épiques, alors je recommande fortement World of Warcraft.', '2023-03-02 10:08:10', 18, 16);
 
 -- --------------------------------------------------------
 
@@ -154,7 +161,10 @@ INSERT INTO `t_utilisateur` (`idUtilisateur`, `utiPseudo`, `utiMotDePasse`, `uti
 (12, 'Celui qui aime les pays', 'd07b45f0e48c1a30f7110522514722cd3a7b081a', '2023-03-02'),
 (13, 'Muller', 'ea1dce70351cdada45108343dcffcd9084bc150d', '2023-02-21'),
 (14, 'Gilbert Gruaz', 'cd065f7067ac65a0bf2711fe65e617f2c28f632a', '2023-01-11'),
-(15, 'Marco', '3829486b93ec44395f0b980424bae9b6fb07b7bc', '2023-03-02');
+(15, 'Marco', '3829486b93ec44395f0b980424bae9b6fb07b7bc', '2023-03-02'),
+(16, 'Le Lecteur', '0509c0751caafccea90b086bf6e24cbfbcfa0b84', '2023-03-02'),
+(17, 'Leonardo', '7610bae85f2b530654cc716772f1fe653373e892', '2023-03-02'),
+(18, 'Neckbeard geek', '3636e63109abd569f46463d5e7336de0883c0616', '2023-03-02');
 
 --
 -- Index pour les tables déchargées
@@ -205,7 +215,7 @@ ALTER TABLE `t_categorie`
 -- AUTO_INCREMENT pour la table `t_cif`
 --
 ALTER TABLE `t_cif`
-  MODIFY `idCif` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `idCif` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT pour la table `t_evaluation`
@@ -217,7 +227,7 @@ ALTER TABLE `t_evaluation`
 -- AUTO_INCREMENT pour la table `t_utilisateur`
 --
 ALTER TABLE `t_utilisateur`
-  MODIFY `idUtilisateur` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idUtilisateur` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
