@@ -70,6 +70,8 @@ $colorClassName = strtr(strtolower($data['catTitre']),"é", "e" );
 
         </div>
 
+    </form>
+
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     <script src="website/resources/js/rating.js"></script>
 

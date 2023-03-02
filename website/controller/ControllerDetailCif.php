@@ -2,6 +2,7 @@
 
 include_once "Controller.php";
 include_once "model/ModelUser.php";
+include_once "model/ModelEvaluation.php";
 
 
 // Contrôleur de la page de détail des CIFs (C'est ici que l'on pourra ajouter une évaluation aux CIFs)
@@ -13,6 +14,7 @@ class ControllerDetailCif extends Controller
     public function __construct() {
         $this->view = new View();
         $this->model['modelCif'] = new ModelCif();
+        $this->model['modelEvaluation'] = new ModelEvaluation();
         $this->data = $this->getCif();
         $this->getEval();
         $this->view->render('detailCif.php', $this->data);
@@ -28,13 +30,14 @@ class ControllerDetailCif extends Controller
 
     function getEval()
     {
-        if (isset($_POST['rating'])) {
-            $rating = $_POST['rating'];
-            header('Location: /website?link=detailCIF&idCif=1');
+        if (isset($_POST['ratingInput'])) 
+        {
+            $rating = $_POST['ratingInput'];
+
+            $this->model['modelEvaluation']->addEvaluation($_SESSION['idUtilisateur'], $_GET['idCif'], $rating);
+
             var_dump($rating);
         }
-
-
     }
 
     

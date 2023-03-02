@@ -100,6 +100,14 @@
   .starRating.rated {
     color: #ffe234;
   }
+
+
+  .formLogin {
+    width: 100%;
+    text-align: center;
+    padding: 20%;
+    border-radius: 10px;
+  }
   
   
 
