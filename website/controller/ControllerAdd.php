@@ -33,7 +33,8 @@ class ControllerAdd extends Controller{
 
             $allCategories = $this->model['category']->getCategories();
 
-            $date = date('y-m-d');
+            date_default_timezone_set('Europe/Zurich');
+            $date = date("Y-m-d H:i:s");
 
             foreach ($allCategories as $cat) {
                 if ($category == $cat['catTitre']) {
