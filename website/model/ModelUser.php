@@ -20,4 +20,12 @@ class ModelUser extends Model{
         $stmt->execute();
         return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getUserById() {
+        $query = '';
+        $stmt = $this->connector->prepare($query);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        return $results;
+    }
 }
