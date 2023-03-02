@@ -2,7 +2,8 @@
 
 $imgName = 'website/resources/img/imgCategory/' . strtr(strtolower($data['catTitre']),"é", "e" ) . '.png';
 $colorClassName = strtr(strtolower($data['catTitre']),"é", "e" );
-
+$date = $data['cifDate'];
+$date = date('d-m-Y');
 ?>
 
 <div class = 'backgroundLightBlue littlePadding'>
@@ -55,7 +56,7 @@ $colorClassName = strtr(strtolower($data['catTitre']),"é", "e" );
         <div class='containerSpaceBetween'>
         <p class='colorWhite'><?php echo $data['utiPseudo'] ?></p>
 
-            <p class='colorWhite'><?php echo $data['cifDate'] ?></p>
+            <p class='colorWhite'><?php echo $date ?></p>
         </div>
 
     </div>
