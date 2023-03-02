@@ -131,9 +131,10 @@ CREATE TABLE `t_utilisateur` (
 
 INSERT INTO `t_utilisateur` (`idUtilisateur`, `utiPseudo`, `utiMotDePasse`, `utiDateEntree`) VALUES
 (1, 'Michel23', 'a6c4ba02f26fe311ae442ddfcd2287a27da879ef', '2023-02-01'),
-(2, 'HenryDes', 'HenryDes', '2023-02-03'),
-(3, 'Joaau', 'joaau', '2023-01-13'),
-(4, 'Sammuel', 'Sammuel', '2023-01-10');
+(2, 'Mec', 'de9f53fd313b0c7afd9c428b7e1ac4c4c492df78', '2023-02-03'),
+(3, 'Joaau', '574f81a19ad3e672c0045a167a978c0195c00a83', '2023-01-13'),
+(4, 'Sammuel', '6174a4b4264343e637d0aabb15e10f21f48633a8', '2023-01-10'),
+(5, 'Sardine', 'bc4d6c093d14cf794f0c740071d0d419420c046c', '2023-03-02');
 
 --
 -- Index pour les tables déchargées
