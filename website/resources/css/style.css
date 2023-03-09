@@ -108,6 +108,27 @@
     padding: 20%;
     border-radius: 10px;
   }
+
+  .buttonAddCifGreen {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: green;
+    cursor: pointer;
+  }
+
+  .buttonAddCifRed {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+
+  }
   
   
 

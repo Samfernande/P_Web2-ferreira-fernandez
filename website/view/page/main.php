@@ -90,4 +90,20 @@ if(isset($_SESSION['showConnection']) && $_SESSION['showConnection'])
 }
 ?>
 
+<?php
+
+if(isset($_SESSION['addCifAnimation']) && $_SESSION['addCifAnimation'])
+{
+    $_SESSION['addCifAnimation'] = false;
+?>
+
+<div id="popup" class="popup">
+        <p>La cif a bien été ajoutée !</p>
+      </div>
+
+<?php
+}
+?>
+
+
 <script src='website/resources/js/successLogin.js'></script>

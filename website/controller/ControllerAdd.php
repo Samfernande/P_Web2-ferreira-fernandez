@@ -29,31 +29,41 @@ class ControllerAdd extends Controller{
             $title = $_POST['title'] ?? "";
             $description = $_POST['description'] ?? "";
 
-            $user = $_SESSION['idUtilisateur'];
+            if(!empty($category) && !empty($title) && !empty($description) && strlen($title) <= 50 && strlen($description) <= 1000 && isset($_SESSION['idUtilisateur']))
+            {
+                $user = $_SESSION['idUtilisateur'];
 
-            $allCategories = $this->model['category']->getCategories();
+                $allCategories = $this->model['category']->getCategories();
 
-            date_default_timezone_set('Europe/Zurich');
-            $date = date("Y-m-d H:i:s");
+                date_default_timezone_set('Europe/Zurich');
+                $date = date("Y-m-d H:i:s");
 
-            foreach ($allCategories as $cat) {
-                if ($category == $cat['catTitre']) {
-                    $idCategory = $cat['idCategorie'];
+                foreach ($allCategories as $cat) {
+                    if ($category == $cat['catTitre']) {
+                        $idCategory = $cat['idCategorie'];
+                    }
                 }
+
+
+                $data = array(
+                    'cifTitre' => $title,
+                    'cifDescription' => $description,
+                    'cifDate' => $date,
+                    'fkUtilisateur' => $user,
+                    'fkCategorie' => $idCategory
+                ); 
+
+                $this->model['cif']->addCif($data);
+                $_SESSION['addCifAnimation'] = true;
+                header('Location: ?link=main');
+                die();
+            }
+            else
+            {
+                $_SESSION['error'] = true;
             }
 
-
-            $data = array(
-                'cifTitre' => $title,
-                'cifDescription' => $description,
-                'cifDate' => $date,
-                'fkUtilisateur' => $user,
-                'fkCategorie' => $idCategory
-            ); 
-
-            $this->model['cif']->addCif($data);
-            header('Location: ?link=main');
-            die();
+            
             
         }
 

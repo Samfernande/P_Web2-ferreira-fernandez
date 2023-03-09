@@ -31,3 +31,11 @@ li, h1, h2, p, a, button, label {
 ul, li {
     list-style: none;
 }
+
+textarea {
+    resize: none;
+    width: 90%;
+  height: 70%;
+  border: 2px solid #ccc;
+  margin: 10px 0 0 4.5%;
+}
