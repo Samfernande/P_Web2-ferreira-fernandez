@@ -10,6 +10,12 @@ class ModelEvaluation extends Model{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getEvaluationByUserId($idUser) {
+        $stmt = $this->connector->prepare("SELECT * FROM db_cif.t_evaluation WHERE fkUtilisateur = $idUser");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function addEvaluation($user, $cif, $evaluation) {
         $query = "INSERT INTO db_cif.t_evaluation (db_cif.t_evaluation.evaNote, db_cif.t_evaluation.fkUtilisateur, db_cif.t_evaluation.fkCif) VALUES ($evaluation, $user, $cif)";
         

@@ -108,8 +108,8 @@ DESCRIPTION : View qui contient la totalité des CIFs, ainsi qu'un système de t
                 $username = $cif['utiPseudo'];
                 $fullStars = floor($eval);
 
-                $imgName = 'website/resources/img/imgCategory/' . strtr(strtolower($title),"é", "e" ) . '.png';
-                $colorClassName = strtr(strtolower($title),"é", "e" );
+                $imgName = 'website/resources/img/imgCategory/' . str_replace("é","e", strtolower($title)) . '.png';
+                $colorClassName = str_replace("é","e", strtolower($title));
 
                 if ($eval - $fullStars >= 0.5) {
                     $halfStars = 1;

@@ -55,7 +55,7 @@ class ControllerAdd extends Controller{
 
                 $this->model['cif']->addCif($data);
                 $_SESSION['addCifAnimation'] = true;
-                header('Location: ?link=main');
+                header('Location: ?link=index');
                 die();
             }
             else

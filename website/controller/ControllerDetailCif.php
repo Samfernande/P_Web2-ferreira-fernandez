@@ -15,7 +15,7 @@ class ControllerDetailCif extends Controller
         $this->view = new View();
         $this->model['modelCif'] = new ModelCif();
         $this->model['modelEvaluation'] = new ModelEvaluation();
-        $this->data['cif'] = $this->getCif();
+        $this->data['cif'] = $this->getCif() != '' ? $this->getCif() : header('Location: website?link=error');
         $this->data['evaluation'] = $this->model['modelEvaluation']->getEvaluation();
         $this->getEval();
         $this->alreadyRated();
@@ -28,7 +28,11 @@ class ControllerDetailCif extends Controller
     {
         $idCif = $_GET['idCif'];
 
-        return $this->model['modelCif']->getCifByID($idCif);
+        if(ctype_digit($idCif))
+            return $this->model['modelCif']->getCifByID($idCif);
+        else
+            return '';
+
     }
 
     function getEval()

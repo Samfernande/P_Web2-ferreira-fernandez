@@ -1,7 +1,7 @@
 <?php
 
-$imgName = 'website/resources/img/imgCategory/' . strtr(strtolower($data['cif']['catTitre']),"é", "e" ) . '.png';
-$colorClassName = strtr(strtolower($data['cif']['catTitre']),"é", "e" );
+$imgName = 'website/resources/img/imgCategory/' . str_replace("é","e", strtolower($data['cif']['catTitre'])) . '.png';
+$colorClassName = str_replace("é","e", strtolower($data['cif']['catTitre']));
 $date = $data['cif']['cifDate'];
 $date = date('d-m-Y');
 ?>

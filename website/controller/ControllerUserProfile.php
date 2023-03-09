@@ -21,8 +21,14 @@ class ControllerUserProfile extends Controller
         $this->model['modelCif'] = new ModelCif();
         $this->model['modelEvaluation'] = new ModelEvaluation();
 
-        $this->data['user'] = $this->getUser();
+        $this->data['user'] = $this->getUser() != '' ? $this->getUser() : header('Location: website?link=error');
+
         $this->data['cif'] = $this->getNbCifs();
+
+        $this->data['evaluation'] = $this->getNbEval();
+
+        $this->data['average'] = $this->getAverage();
+
 
         $this->view->render('userProfile.php', $this->data);
 
@@ -35,12 +41,27 @@ class ControllerUserProfile extends Controller
 
     function getNbEval()
     {
+        return $this->model['modelEvaluation']->getEvaluationByUserId($this->idUser);
     }
 
     function getNbCifs()
     {
         return $this->model['modelCif']->getCifsByUserId($this->idUser);
     }
+
+    function getAverage()
+    {
+        $average = [];
+
+        foreach($this->data['cif'] as $cif)
+        {
+            array_push($average, $cif['average']);
+        }
+
+        return round(array_sum($average)/count($this->data['cif']), 2);
+
+    }
+
 }
 
 

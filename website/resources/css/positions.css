@@ -117,6 +117,10 @@
     margin: 0 2%;
 }
 
+.marginLeft {
+    margin: 1% 0 1% 2%;
+}
+
 /*Ajoute des marges de côté aux éléments*/
 
 .sideMarge {
