@@ -54,7 +54,7 @@ $date = date('d-m-Y');
         </div>
 
         <div class='containerSpaceBetween'>
-        <p class='colorWhite'><?php echo $data['cif']['utiPseudo'] ?></p>
+        <a class='colorWhite' href="?link=userProfile&idUser=<?php echo $data['cif']['idUtilisateur'] ?>"><?php echo $data['cif']['utiPseudo'] ?></a>
 
             <p class='colorWhite'><?php echo $date ?></p>
         </div>

@@ -6,6 +6,7 @@ include_once "ControllerCifs.php";
 include_once "ControllerAdd.php";
 include_once "ControllerDetailCif.php";
 include_once "ControllerUserProfile.php";
+include_once "ControllerError.php";
 
 // Classe controller permettant d'intéragir avec les modèles et ajouter les données dans view
 
@@ -32,13 +33,14 @@ class Controller {
                     $this->actualController = new ControllerMain();
                     break;
                 case 'login':
-                    $this->actualController = new ControllerLogin();
+                    !isset($_SESSION['idUtilisateur']) ? $this->actualController = new ControllerLogin() : $this->actualController = new ControllerError();
                     break;
                 case 'allCIF':
                     $this->actualController = new ControllerCifs();
                     break;
                 case 'addCIF':
-                    $this->actualController = new ControllerAdd();
+                        isset($_SESSION['idUtilisateur']) ? $this->actualController = new ControllerAdd() : $this->actualController = new ControllerError();
+
                     break;
                 case 'detailCIF':
                     $this->actualController = new ControllerDetailCif();
@@ -47,7 +49,7 @@ class Controller {
                     $this->actualController = new ControllerUserProfile();
                     break;
                 default:
-                    $this->actualController = new ControllerMain();
+                    $this->actualController = new ControllerError();
                     break;
             }
             // Sinon instancie le controlleur main

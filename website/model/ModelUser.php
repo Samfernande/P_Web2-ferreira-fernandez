@@ -21,8 +21,8 @@ class ModelUser extends Model{
         return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getUserById() {
-        $query = '';
+    public function getUserById($idUser) {
+        $query = "SELECT * FROM db_cif.t_utilisateur WHERE idUtilisateur = $idUser";
         $stmt = $this->connector->prepare($query);
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
