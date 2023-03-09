@@ -53,7 +53,7 @@ class ModelCif extends Model{
     }
 
     // Récupère les CIFs triés selon des options
-    public function getCifSorted($category, $evaluation)
+    public function getCifSorted($category, $evaluation, $search)
     {
 
         // Regarde si category et evaluation sont donnés. Si ce n'est pas le cas, les requêtes ne sont pas incluses dans la requête principale

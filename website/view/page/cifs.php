@@ -21,6 +21,11 @@ DESCRIPTION : View qui contient la totalité des CIFs, ainsi qu'un système de t
 
     <form class='formSearch formLogin' method='post' action='?link=allCIF'>
         <div class='containerColumnMiddle'>
+
+            <div>
+                <input type='search' name='searchBar' placeholder="Rechercher..." class='searchBar'>
+            </div>
+
             <div class='containerSpaceEvenly'>
                 <div>
                     <label class='textSmall'>Trier par catégorie :</label>
@@ -48,7 +53,7 @@ DESCRIPTION : View qui contient la totalité des CIFs, ainsi qu'un système de t
 
                     <!--=========================PAR EVALUATION=========================-->
 
-                    <label class='textSmall'>Trier par évaluations :</label>
+                    <label class='textSmall'>Filtrer par évaluations :</label>
 
                     <select class='selectCif' name="selectEvaluation">
                         <option value='' selected></option>

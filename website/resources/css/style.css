@@ -189,6 +189,16 @@
 .buttonShowCif:disabled {
   cursor: auto;
 }
+
+/* Appliquer un style à la balise input */
+.searchBar {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border-style: none;
+  margin: 50px;
+}
   
   
 

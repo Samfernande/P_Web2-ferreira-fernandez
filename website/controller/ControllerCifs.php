@@ -26,11 +26,12 @@ class ControllerCifs extends Controller{
     {
         $category = $_POST['selectCif'] ?? '';
         $evaluation = $_POST['selectEvaluation'] ?? '';
+        $search = $_POST['searchBar'] ?? '';
 
-        if(!empty($category) || !empty($evaluation))
+        if(!empty($category) || !empty($evaluation) || !empty($search))
         {
             $this->data['search'] = true;
-            return $this->model['cif']->getCifSorted($category, $evaluation);
+            return $this->model['cif']->getCifSorted($category, $evaluation, $search);
         }
         else
         {
