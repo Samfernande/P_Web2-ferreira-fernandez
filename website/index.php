@@ -1,3 +1,9 @@
+<!--
+Auteur : João Ferreira & Samuel Fernandez
+Date : 10.03.2023
+Description : Page principale, qui instancie tout
+-->
+
 <?php
 // démarrage de la session sur toutes les pages
 session_start(); 
