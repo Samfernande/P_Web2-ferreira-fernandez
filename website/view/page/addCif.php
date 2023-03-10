@@ -1,4 +1,11 @@
+<!--
+Auteur : João Ferreira & Samuel Fernandez
+Date : 10.03.2023
+Description : Page d'ajout d'un CIF
+-->
+
 <?php 
+// récupération des données de CIF du Controller ce cette page
 $data['cif'];
 ?>
 
@@ -22,8 +29,11 @@ $data['cif'];
                         <select name="category" class='selectCif' required>
                         <option value="">
 
-                            <?php foreach ($data['category'] as $item) {?>
-
+                            <?php 
+                            // parcourt le tableau de catégories
+                            foreach ($data['category'] as $item) {
+                                
+                                // liste déroulante avec le nom des catégories ?>
                                 <option value="<?php echo $item['catTitre']; ?>"><?php echo $item['catTitre']; ?></option>
 
                             <?php } ?>
@@ -45,7 +55,9 @@ $data['cif'];
 
 </form>
 
-<?php if(isset($_SESSION['error']) && $_SESSION['error']) { ?>
+<?php 
+// validation des données entrées
+if(isset($_SESSION['error']) && $_SESSION['error']) { ?>
 
     <div id="popup" class="popup">
         <p>Nombre de caractères maximum dépassés</p>

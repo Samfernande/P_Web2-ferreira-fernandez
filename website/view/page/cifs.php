@@ -1,10 +1,8 @@
 <!--
-TITRE : P_Web2-CIFs
-AUTEURS : Ferreira Jõao & Fernandez Samuel
-DATE : 23.02.2023
-LIEU : Lausanne
-DESCRIPTION : View qui contient la totalité des CIFs, ainsi qu'un système de tri de ces derniers par rapport à leur catégorie,
-              évaluations, etc...
+Auteur : João Ferreira & Samuel Fernandez
+Date : 10.03.2023
+Description : Page qui contient la totalité des CIFs, ainsi qu'un système de tri de ces derniers par rapport à leur catégorie,
+              évaluations, etc..
 -->
 
 
