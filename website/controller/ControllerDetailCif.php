@@ -19,6 +19,7 @@ class ControllerDetailCif extends Controller
         $this->data['evaluation'] = $this->model['modelEvaluation']->getEvaluation();
         $this->getEval();
         $this->alreadyRated();
+        $this->sameUser();
 
         $this->view->render('detailCif.php', $this->data);
     }
@@ -27,6 +28,7 @@ class ControllerDetailCif extends Controller
     function getCif()
     {
         $idCif = $_GET['idCif'];
+        
 
         if(ctype_digit($idCif))
             return $this->model['modelCif']->getCifByID($idCif);
@@ -37,11 +39,12 @@ class ControllerDetailCif extends Controller
 
     function getEval()
     {
-        
         if(isset($_SESSION['idUtilisateur']))
         {
             if (isset($_POST['ratingInput'])) 
             {
+              
+
                 $rating = $_POST['ratingInput'];
 
                 $this->model['modelEvaluation']->addEvaluation($_SESSION['idUtilisateur'], $_GET['idCif'], $rating);
@@ -86,8 +89,22 @@ class ControllerDetailCif extends Controller
         
     }
 
-    
-
+    function sameUser() {
+        $idCif = $_GET['idCif'];
+        $fkUtilisateur = $this->model['modelCif']->getCifByID($idCif)['idUtilisateur'];
+        
+        if(isset($_SESSION['idUtilisateur'])) {
+            if($_SESSION['idUtilisateur'] == $fkUtilisateur){
+                $this->data['sameUser'] = true;
+            }
+            else {
+                $this->data['sameUser'] = false;
+            }
+        }
+        else {
+            $this->data['sameUser'] = false;
+        }
+    }
 }
 
 

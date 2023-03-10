@@ -29,7 +29,8 @@ class ModelCif extends Model{
         LEFT JOIN db_cif.t_evaluation ON t_cif.idCif = t_evaluation.fkCif 
         INNER JOIN db_cif.t_categorie ON t_cif.fkCategorie = t_categorie.idCategorie 
         GROUP BY t_cif.idCif 
-        ORDER BY cifDate DESC;");
+        ORDER BY cifDate DESC
+        LIMIT 50;");
         
         $stmt->execute();
           $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -60,6 +61,17 @@ class ModelCif extends Model{
         $categorySearch = !empty($category) ? "WHERE fkCategorie = $category" : '';
         $evalSearch = !empty($evaluation) ? "AVG(t_evaluation.evaNote) $evaluation," : '';
 
+        if(!empty($search)) {
+            if(!empty($category)){
+                $searchBar = !empty($search) ? "AND LOWER(cifTitre) LIKE LOWER('%$search%') OR LOWER(utiPseudo) LIKE LOWER('%$search%')" : '';
+            } else {
+                $searchBar = !empty($search) ? "WHERE LOWER(cifTitre) LIKE LOWER('%$search%') OR LOWER(utiPseudo) LIKE LOWER('%$search%')" : '';
+            }
+        }
+        else {
+            $searchBar = '';
+        }
+
         $stmt = $this->connector->prepare(
             "SELECT t_cif.idCif, t_cif.cifTitre, t_utilisateur.utiPseudo, COALESCE(ROUND(CEIL(AVG(t_evaluation.evaNote) * 2) / 2, 1), 0) AS average, catTitre, cifDate
             FROM db_cif.t_cif 
@@ -67,12 +79,14 @@ class ModelCif extends Model{
             LEFT JOIN db_cif.t_evaluation ON t_cif.idCif = t_evaluation.fkCif 
             INNER JOIN db_cif.t_categorie ON t_cif.fkCategorie = t_categorie.idCategorie
             $categorySearch
+            $searchBar
             GROUP BY t_cif.idCif
             ORDER BY $evalSearch
-            cifDate DESC;");
-
+            cifDate DESC
+            LIMIT 50;");
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
         return $results;
     }
 

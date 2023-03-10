@@ -62,7 +62,7 @@ $date = date('d-m-Y');
     </div>
 
     <?php
-        if (!$data['alreadyRated']){
+        if (!$data['alreadyRated'] && !$data['sameUser']){
     ?>
 
     <form id="ratingForm" action="" method="POST">
@@ -74,10 +74,12 @@ $date = date('d-m-Y');
         </div>
 
     </form>
-
+    <?php } elseif ($data['sameUser']) { ?>
+        <p>Vous ne pouvez pas évaluer votre propre CIF</p>
     <?php } else {?>
         <p>Vous avez déjà évalué ce CIF</p>
-    <?php }?>
+    <?php } ?>
+
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     <script src="website/resources/js/rating.js"></script>
 
