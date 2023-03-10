@@ -1,3 +1,9 @@
+<!--
+Auteur : João Ferreira & Samuel Fernandez
+Date : 10.03.2023
+Description : Page de connexion et d'inscription
+-->
+
 <div class='backgroundLightBlue bigPadding containerSpaceEvenly'>
 
     <div class= 'containerMiddleColumns'>
@@ -37,20 +43,25 @@
     </div>
 </div>
 
-<?php if(isset($_SESSION['incorrectLogin']) && $_SESSION['incorrectLogin']) {
+<?php 
+// si l'utilisateur saisie des informations de connexion incorrectes, message d'erreur
+if(isset($_SESSION['incorrectLogin']) && $_SESSION['incorrectLogin']) {
     $_SESSION['incorrectLogin'] = false; ?>
 
 <div id="popup" class="popup">
         <p>Identifiants incorrects ou n'existent pas !</p>
       </div>
 
-<?php } elseif (isset($_SESSION['sameUser']) && $_SESSION['sameUser']) {  $_SESSION['sameUser'] = false;?>
-
+<?php } 
+// si on s'inscrit et le compte existe déjà, message d'erreur
+elseif (isset($_SESSION['sameUser']) && $_SESSION['sameUser']) {  $_SESSION['sameUser'] = false;?>
 <div id="popup" class="popup">
         <p>Pseudo déjà utilisé !</p>
       </div>
-<?php } elseif (isset($_SESSION['notSamePassword']) && $_SESSION['notSamePassword']) { $_SESSION['notSamePassword'] = false;?>
 
+<?php } 
+// si la confirmation mots de passe est mal faite, message d'erreur
+elseif (isset($_SESSION['notSamePassword']) && $_SESSION['notSamePassword']) { $_SESSION['notSamePassword'] = false;?>
     <div id="popup" class="popup">
         <p>Les mots de passe ne correspondent pas</p>
       </div>

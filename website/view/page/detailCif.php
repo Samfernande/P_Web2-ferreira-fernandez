@@ -1,5 +1,11 @@
-<?php
+<!--
+Auteur : João Ferreira & Samuel Fernandez
+Date : 10.03.2023
+Description : Page de détails d'un CIF
+-->
 
+<?php
+// variables d'un CIF
 $imgName = 'website/resources/img/imgCategory/' . str_replace("é","e", strtolower($data['cif']['catTitre'])) . '.png';
 $colorClassName = str_replace("é","e", strtolower($data['cif']['catTitre']));
 $date = $data['cif']['cifDate'];
@@ -8,11 +14,11 @@ $date = date('d-m-Y');
 
 <div class = 'backgroundLightBlue littlePadding'>
 
-    <div class='card <?php echo $colorClassName ?>'>
+    <div class='card <?php echo $colorClassName // couleur en fonction de la catégorie ?>'>
 
         <div class='containerSpaceBetween backgroundDarkBlue borderRound'>
 
-            <h1 class='colorWhite'><?php echo $data['cif']['cifTitre'] ?></h1>
+            <h1 class='colorWhite'><?php echo $data['cif']['cifTitre'] //  ?></h1>
 
             <div class='containerHorizontal'>
                 <h2 class='colorWhite'><?php echo $data['cif']['catTitre'] ?></h2>

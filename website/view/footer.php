@@ -1,3 +1,9 @@
+<!--
+Auteur : João Ferreira & Samuel Fernandez
+Date : 10.03.2023
+Description : Template contenant le pied de page de toutes les pages
+-->
+
 <footer class = "backgroundDarkBlue footer">
 
 
@@ -15,12 +21,16 @@
 
         <li class = "colorWhite animationLink textSmall littleSideMarge">
 
-            <?php  if (!isset($_SESSION['isConnected'])) { ?>
-                
+            <?php
+            // check si l'utilisateur est connecté  
+            if (!isset($_SESSION['isConnected'])) { 
+
+                // renvoie sur la page de login?>
                 <a href='?link=login' class = 'textDropDownSmall colorWhite'>Ajouter une CIF</a>
 
-            <?php } else { ?>
+            <?php } else { 
 
+                // renvoie sur la bonne page?>
                 <a href='?link=addCif' class = 'textDropDownSmall colorWhite'>Ajouter une CIF</a>
 
         <?php } ?>
@@ -29,12 +39,16 @@
 
         <li class = "colorWhite animationLink textSmall littleSideMarge">
 
-            <?php if (!isset($_SESSION['isConnected'])){ ?>
-
+            <?php 
+             // check si l'utilisateur est connecté  
+            if (!isset($_SESSION['isConnected'])){ 
+                
+                // affiche "Connexion" pour se connecter ?>
                 <a href="?link=login" class = "textDropDownSmall colorWhite">Connexion</a>
 
-            <?php } else {?>
+            <?php } else {
 
+                // affiche "Connexion" pour se déconnecter ?>
                 <a href="?connection=false" class = "textDropDownSmall colorWhite">Deconnexion</a>
                 
             <?php }?>
@@ -49,6 +63,5 @@
 <p class = colorWhite>
 ETML, Tout droit réservé - Ferreira João - Fernandez Samuel
 </p>
-
 
 </footer>
