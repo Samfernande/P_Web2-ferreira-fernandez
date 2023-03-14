@@ -8,7 +8,8 @@
 include_once "model.php";
 
 // hérite de la classe Model
-class ModelUser extends Model{
+class ModelUser extends Model
+{
     
      /**
      * Ajout d'un utilisateur sur la base de données
