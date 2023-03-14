@@ -1,4 +1,9 @@
 <?php 
+/**
+ * Auteur : João Ferreira & Samuel Fernandez
+ * Date : 10.03.2023
+ * Description : Contrôleur de la page de connexion et inscription
+ */
 
 include_once "Controller.php";
 include_once "model/ModelUser.php";
@@ -9,7 +14,9 @@ class ControllerLogin extends Controller
     private $data;
     private $checkConnection;
 
-
+    /**
+    * Constructeur de la classe ControllerLogin, donne des variables de model à la view, génére la page spécifique
+    */
     public function __construct() {
         $this->view = new View();
         $this->model = new ModelUser();
@@ -19,18 +26,25 @@ class ControllerLogin extends Controller
 
     }
 
+    /**
+     * Prendre les données du formulaire de login, et faire la connexion pour vérifier que l'utilisateur de la base de données est le correcte
+    */
     private function getLogin() 
     {
+        // si les champs saisies sont vides, restent vide
         $username =  $_POST['username'] ?? '';
         $password =  $_POST['password'] ?? '';
-        $repeatPassword = $_POST['repeatPasswordRegister'] ?? '';
 
+        // hashé le mot de passe en SHA1
         $hashedPassword = sha1($password);
 
+        // si les données de l'utilisateurs ont été saisis
         if(!empty($username) || !empty($password)) 
-        {
+        {   
+            // parcourir la table utilisateurs de la DB
             foreach ($this->model->getUser() as $userKey)
-            {
+            {   
+                // si les données correspondent avec ce qui existe dans la base de données, il se connecte
                 if (strtolower($userKey['utiPseudo']) == strtolower($username) && $userKey['utiMotDePasse'] == $hashedPassword)
                 {
                     $_SESSION['isConnected'] = 1;
@@ -38,7 +52,8 @@ class ControllerLogin extends Controller
                     $_SESSION['showConnection'] = true;
                     header('Location: ?link=index');
                     exit();
-                }
+                } 
+                // si non, on lui dis de répeter
                 else {
                     $_SESSION['incorrectLogin'] = true;
                 }
@@ -47,6 +62,9 @@ class ControllerLogin extends Controller
         }
     }
 
+    /**
+     * Prendre les données du formulaire d'inscription, et faire l'inscription pour ajouter l'utilisateur dans la base de données
+    */
     private function register() {
         $username = $_POST['userRegister'] ?? '';
         $password = $_POST['passwordRegister'] ?? '';

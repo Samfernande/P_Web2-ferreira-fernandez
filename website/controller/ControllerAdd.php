@@ -1,14 +1,22 @@
 <?php 
+/**
+ * Auteur : João Ferreira & Samuel Fernandez
+ * Date : 10.03.2023
+ * Description : Controller permettant l'ajout d'un CIF
+ */
 
 include_once "Controller.php";
 include_once "model/model.php";
 include_once "model/ModelUser.php";
 
-
+// hérite de la classe Controller
 class ControllerAdd extends Controller{
     private $model;
     private $data;
 
+     /**
+     * Constructeur de la classe ControllerAdd, donne des variables de model à la view, génére la page spécifique
+    */
     public function __construct() {
         $this->model['category'] = new ModelCategory();
         $this->model['cif'] = new ModelCif();
@@ -22,6 +30,9 @@ class ControllerAdd extends Controller{
         $this->view->render('addCif.php', $this->data);
     }
     
+     /**
+     * Récupération du formulaire rempli par l'utilisateur pour ajouter un CIF
+    */
     private function getForm() {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
@@ -70,8 +81,6 @@ class ControllerAdd extends Controller{
     }
 
 }
-
-
 
 
 ?>

@@ -1,17 +1,25 @@
 <?php 
+/**
+ * Auteur : João Ferreira & Samuel Fernandez
+ * Date : 10.03.2023
+ * Description : Contrôleur de la page de détails d'utilisateur
+ */
 
 include_once "Controller.php";
 include_once "model/ModelUser.php";
 include_once "model/ModelEvaluation.php";
 include_once "model/ModelCif.php";
 
+// hérite de la classe Controller
 class ControllerUserProfile extends Controller
 {
     private $model;
     private $data;
     private $idUser;
 
-
+     /**
+    * Constructeur de la classe ControllerUserProfile, donne des variables de model à la view, génére la page spécifique
+    */
     public function __construct() {
 
         $this->idUser = $_GET['idUser'] ? $_GET['idUser'] : '';

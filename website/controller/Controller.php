@@ -1,4 +1,9 @@
 <?php
+/**
+ * Auteur : João Ferreira & Samuel Fernandez
+ * Date : 10.03.2023
+ * Description : Classe controller permettant d'intéragir avec les modèles et ajouter les données dans view
+ */
 
 include_once "ControllerLogin.php";
 include_once "ControllerMain.php";
@@ -8,7 +13,6 @@ include_once "ControllerDetailCif.php";
 include_once "ControllerUserProfile.php";
 include_once "ControllerError.php";
 
-// Classe controller permettant d'intéragir avec les modèles et ajouter les données dans view
 
 class Controller {
 
@@ -16,10 +20,16 @@ class Controller {
     private $actualController;
     private $connection;
     
+    /**
+     * Constructeur de la classe Controller, déconnexion d'un utilisateur
+    */
     public function __construct() {
         $this->disconnect();
     }
 
+     /**
+     * Création d'un controller et assignation des controllers aux pages
+    */
     public function CreateController() 
     {
         // Récupère le lien sur lequel l'utilisateur a cliqué
@@ -61,7 +71,9 @@ class Controller {
     }
 
 
-    // Méthode qui vide la Session, pour se déconnecter du compte
+     /**
+     * Méthode qui vide la Session, pour se déconnecter du compte
+    */
     public function disconnect()
     {
         if (isset($_GET['connection']))

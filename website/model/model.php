@@ -10,7 +10,7 @@ class Model {
     public $connector;
 
      /**
-     * Constructeur de la classe Database, connexion à la base de données
+     * Constructeur de la classe Model, connexion à la base de données
      */
     public function __construct() {
 

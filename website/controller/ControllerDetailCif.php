@@ -1,16 +1,24 @@
 <?php 
+/**
+ * Auteur : João Ferreira & Samuel Fernandez
+ * Date : 10.03.2023
+ * Description : Contrôleur de la page de détail des CIFs (C'est ici que l'on pourra ajouter une évaluation aux CIFs)
+ */
 
 include_once "Controller.php";
 include_once "model/ModelUser.php";
 include_once "model/ModelEvaluation.php";
 
 
-// Contrôleur de la page de détail des CIFs (C'est ici que l'on pourra ajouter une évaluation aux CIFs)
+// hérite de la classe Controller
 class ControllerDetailCif extends Controller
 {
     private $model;
     private $data;
 
+      /**
+     * Constructeur de la classe ControllerDetailCif, donne des variables de model à la view, génére la page spécifique
+    */
     public function __construct() {
         $this->view = new View();
         $this->model['modelCif'] = new ModelCif();
@@ -24,7 +32,9 @@ class ControllerDetailCif extends Controller
         $this->view->render('detailCif.php', $this->data);
     }
 
-
+    /**
+     * Récupération du ID du CIF cliqué à l'aide de la requête dans ModelCif
+    */
     function getCif()
     {
         $idCif = $_GET['idCif'];
@@ -37,6 +47,9 @@ class ControllerDetailCif extends Controller
 
     }
 
+     /**
+     * Récupération de la moyenne d'évaluations du CIF cliqué à l'aide de la requête dans ModelEvaluation
+    */
     function getEval()
     {
         if(isset($_SESSION['idUtilisateur']))
@@ -65,6 +78,9 @@ class ControllerDetailCif extends Controller
         }
     }
 
+     /**
+     * Vérification si l'utilisateur a déjà évalué le CIF ou pas, si oui, ne peut pas l'évaluer
+    */
     function alreadyRated()
     {
         if(isset($_SESSION['idUtilisateur']))
@@ -89,6 +105,9 @@ class ControllerDetailCif extends Controller
         
     }
 
+     /**
+     * Vérification si l'utilisateur a créer le CIF ou pas, si oui, ne peut pas l'évaluer
+    */
     function sameUser() {
         $idCif = $_GET['idCif'];
         $fkUtilisateur = $this->model['modelCif']->getCifByID($idCif)['idUtilisateur'];

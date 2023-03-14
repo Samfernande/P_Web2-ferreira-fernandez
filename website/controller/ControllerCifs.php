@@ -1,15 +1,23 @@
 <?php 
+/**
+ * Auteur : João Ferreira & Samuel Fernandez
+ * Date : 10.03.2023
+ * Description : Controller permettant de afficher/récupérer tous les CIFs
+ */
 
 include_once "Controller.php";
 include_once "model/ModelCif.php";
 include_once "model/ModelUser.php";
 include_once "model/ModelCategory.php";
 
-
+// hérite de la classe Controller
 class ControllerCifs extends Controller{
     private $model;
     private $data;
 
+    /**
+     * Constructeur de la classe ControllerCifs, donne des variables de model à la view, génére la page spécifique
+    */
     public function __construct() {
         $this->model['cif'] = new ModelCif();
         $this->model['category'] = new ModelCategory();
@@ -20,8 +28,11 @@ class ControllerCifs extends Controller{
         $this->data['category'] = $this->model['category']->getCategories();
         
         $this->view->render('cifs.php', $this->data);
-    }
+    }   
 
+    /**
+     * Génére tous les CIFs à l'aide de la requête réalisé dans ModelCif, et retourne des variables pour donner à la view
+    */
     function generateCIFs()
     {
         $category = $_POST['selectCif'] ?? '';
