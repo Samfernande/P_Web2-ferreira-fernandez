@@ -164,7 +164,8 @@ INSERT INTO `t_utilisateur` (`idUtilisateur`, `utiPseudo`, `utiMotDePasse`, `uti
 (15, 'Marco', '3829486b93ec44395f0b980424bae9b6fb07b7bc', '2023-03-02'),
 (16, 'Le Lecteur', '0509c0751caafccea90b086bf6e24cbfbcfa0b84', '2023-03-02'),
 (17, 'Leonardo', '7610bae85f2b530654cc716772f1fe653373e892', '2023-03-02'),
-(18, 'Neckbeard geek', '3636e63109abd569f46463d5e7336de0883c0616', '2023-03-02');
+(18, 'Neckbeard geek', '3636e63109abd569f46463d5e7336de0883c0616', '2023-03-02'),
+(19, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '2023-01-02');
 
 --
 -- Index pour les tables déchargées
