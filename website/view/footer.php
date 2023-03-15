@@ -31,7 +31,7 @@ Description : Template contenant le pied de page de toutes les pages
             <?php } else { 
 
                 // renvoie sur la bonne page?>
-                <a href='?link=addCif' class = 'textDropDownSmall colorWhite'>Ajouter une CIF</a>
+                <a href='?link=addCIF' class = 'textDropDownSmall colorWhite'>Ajouter une CIF</a>
 
         <?php } ?>
 
