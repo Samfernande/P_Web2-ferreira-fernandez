@@ -2,7 +2,7 @@
 /**
  * Auteur : João Ferreira & Samuel Fernandez
  * Date : 10.03.2023
- * Description : Classe controller permettant d'intéragir avec les modèles et ajouter les données dans view
+ * Description : Classe contrôleur principale permettant d'appeller les contrôleurs par rapport à la bonne page.
  */
 
 include_once "ControllerLogin.php";
@@ -21,7 +21,7 @@ class Controller {
     private $connection;
     
     /**
-     * Constructeur de la classe Controller, déconnexion d'un utilisateur
+     * Constructeur de la classe Controller, à chaque actualisation, observe si l'utilisateur souhaite se déconnecter
     */
     public function __construct() {
         $this->disconnect();
@@ -37,6 +37,7 @@ class Controller {
             $link = $_GET['link'];
 
             // Instancie le controlleur correspondant à la bonne page
+            // Pour les pages demandant un accès authentifié, regarde d'abord si ce dernier possède bien une session, si non, renvoie sur la page d'erreir
             switch ($link) 
             {
                 case 'index':

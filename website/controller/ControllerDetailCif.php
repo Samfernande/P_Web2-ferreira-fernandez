@@ -10,7 +10,8 @@ include_once "model/ModelUser.php";
 include_once "model/ModelEvaluation.php";
 
 
-// hérite de la classe Controller
+// Hérite de la classe Controller
+
 class ControllerDetailCif extends Controller
 {
     private $model;

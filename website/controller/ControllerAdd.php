@@ -34,11 +34,16 @@ class ControllerAdd extends Controller{
      * Récupération du formulaire rempli par l'utilisateur pour ajouter un CIF
     */
     private function getForm() {
+
+        // Détecte si une requête POST a bien eu lieu
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $category = $_POST['category'] ?? "";
             $title = $_POST['title'] ?? "";
             $description = $_POST['description'] ?? "";
+
+            // Si toutes les données sont valides, ajoute les CIFs dans la base de données
 
             if(!empty($category) && !empty($title) && !empty($description) && strlen($title) <= 50 && strlen($description) <= 1000 && isset($_SESSION['idUtilisateur']))
             {
@@ -69,6 +74,7 @@ class ControllerAdd extends Controller{
                 header('Location: ?link=index');
                 die();
             }
+            // Sinon, renvoie une erreur
             else
             {
                 $_SESSION['error'] = true;
