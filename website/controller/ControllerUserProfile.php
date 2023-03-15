@@ -42,21 +42,25 @@ class ControllerUserProfile extends Controller
 
     }
 
+    // Permet de récupérer l'utilisateur par rapport à son ID
     function getUser()
     {
         return $this->model['modelUser']->getUserById($this->idUser);
     }
 
+    // Permet de récupérer le nombre d'évaluations de l'utilisateur
     function getNbEval()
     {
         return $this->model['modelEvaluation']->getEvaluationByUserId($this->idUser);
     }
 
+    // Permet de récupérer le nombre de CIFs de l'utilisateur
     function getNbCifs()
     {
         return $this->model['modelCif']->getCifsByUserId($this->idUser);
     }
 
+    // Permet de récupérer la moyenne des évaluations qu'a reçu l'utilisateur
     function getAverage()
     {
         $average = [];

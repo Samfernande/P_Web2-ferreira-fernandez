@@ -35,10 +35,10 @@ class ControllerLogin extends Controller
         $username =  $_POST['username'] ?? '';
         $password =  $_POST['password'] ?? '';
 
-        // hashé le mot de passe en SHA1
+        // hash du mot de passe en SHA1
         $hashedPassword = sha1($password);
 
-        // si les données de l'utilisateurs ont été saisis
+        // si les données de l'utilisateurs ont été saisies
         if(!empty($username) || !empty($password)) 
         {   
             // parcourir la table utilisateurs de la DB
@@ -53,7 +53,7 @@ class ControllerLogin extends Controller
                     header('Location: ?link=index');
                     exit();
                 } 
-                // si non, on lui dis de répeter
+                // si non, on lui dit de répeter
                 else {
                     $_SESSION['incorrectLogin'] = true;
                 }

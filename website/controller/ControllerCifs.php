@@ -31,7 +31,7 @@ class ControllerCifs extends Controller{
     }   
 
     /**
-     * Génére tous les CIFs à l'aide de la requête réalisé dans ModelCif, et retourne des variables pour donner à la view
+     * Génére tous les CIFs à l'aide de la requête réalisée dans ModelCif, et retourne les variables à la view
     */
     function generateCIFs()
     {
